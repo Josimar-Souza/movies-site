@@ -1,7 +1,11 @@
-const MOVIES_NOW_PLAYING = 'MOVIES_NOW_PLAYING';
+const NOW_PLAYING = 'NOW_PLAYING';
+const POPULAR = 'POPULAR';
+const TOP_RATED = 'TOP_RATED';
 
 const actionsTypes = {
-  MOVIES_NOW_PLAYING,
+  NOW_PLAYING,
+  POPULAR,
+  TOP_RATED,
 };
 
 export default actionsTypes;
