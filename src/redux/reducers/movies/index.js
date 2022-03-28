@@ -1,9 +1,10 @@
 import actionsTypes from '../../actions/movies/actionsTypes';
 
 const {
-  NOW_PLAYING,
-  POPULAR,
-  TOP_RATED,
+  NOW_PLAYING_ACTION_TYPE,
+  POPULAR_ACTION_TYPE,
+  TOP_RATED_ACTION_TYPE,
+  UPCOMING_ACTION_TYPE,
 } = actionsTypes;
 
 const INITIAL_STATE = {
@@ -17,7 +18,7 @@ const INITIAL_STATE = {
 
 const movieReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case NOW_PLAYING:
+    case NOW_PLAYING_ACTION_TYPE:
       return {
         ...state,
         movies: {
@@ -25,7 +26,7 @@ const movieReducer = (state = INITIAL_STATE, action) => {
           nowPlaying: action.payload,
         },
       };
-    case POPULAR:
+    case POPULAR_ACTION_TYPE:
       return {
         ...state,
         movies: {
@@ -33,12 +34,20 @@ const movieReducer = (state = INITIAL_STATE, action) => {
           popular: action.payload,
         },
       };
-    case TOP_RATED:
+    case TOP_RATED_ACTION_TYPE:
       return {
         ...state,
         movies: {
           ...state.movies,
           topRated: action.payload,
+        },
+      };
+    case UPCOMING_ACTION_TYPE:
+      return {
+        ...state,
+        movies: {
+          ...state.movies,
+          upcoming: action.payload,
         },
       };
     default:

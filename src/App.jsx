@@ -1,19 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import movieActions from './redux/actions/movies/actions';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const dispatch = useDispatch();
-  const { getNowPlaying, getPopular, getTopRated } = movieActions;
-
-  useEffect(() => {
-    dispatch(getNowPlaying());
-    dispatch(getPopular());
-    dispatch(getTopRated());
-  }, []);
-
   return (
     <div className="App">
       <header className="App-header">
