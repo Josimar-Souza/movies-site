@@ -14,7 +14,13 @@ const INITIAL_STATE = {
 const movieReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case MOVIES_NOW_PLAYING:
-      return { ...state, nowPlaying: action.payload };
+      return {
+        ...state,
+        movies: {
+          ...state.movies,
+          nowPlaying: action.payload,
+        },
+      };
     default:
       return state;
   }
