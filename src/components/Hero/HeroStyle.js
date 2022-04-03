@@ -4,6 +4,33 @@ const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
 
 const image = (props) => `${baseImageURL}${props.image}`;
 
+const LeftSideFade = styled.div`
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), 85%, rgba(0, 0, 0, 0));
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 30%;
+`;
+
+const BottomSideFade = styled.div`
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85) 55%, rgba(0, 0, 0, 1));
+  bottom: 0;
+  height: 10rem;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  width: 90%;
+`;
+
+const InfoSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const InfoBlock = styled.div`
   background: rgba(216, 216, 216, 0.4);
   border-radius: 15px;
@@ -11,7 +38,8 @@ const InfoBlock = styled.div`
   color: white;
   margin-left: 15px;
   padding: 15px;
-  width: 25%;
+  width: 30%;
+  z-index: 1;
 `;
 
 const HeroStyle = styled.div`
@@ -26,6 +54,9 @@ const HeroStyle = styled.div`
 const styles = {
   HeroStyle,
   InfoBlock,
+  InfoSection,
+  LeftSideFade,
+  BottomSideFade,
 };
 
 export default styles;
