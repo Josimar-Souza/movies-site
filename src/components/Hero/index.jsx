@@ -9,12 +9,12 @@ function Hero({ movie }) {
     InfoSection,
     LeftSideFade,
     BottomSideFade,
+    MovieNote,
   } = styles;
 
   const formatDate = (date) => {
     const dateList = date.split('-');
-    const formattedDate = `${dateList[2]}/${dateList[1]}/${dateList[0]}`;
-    return formattedDate;
+    return dateList[0];
   };
 
   console.log(movie);
@@ -23,8 +23,8 @@ function Hero({ movie }) {
       <InfoBlock>
         <h1>{movie.title}</h1>
         <InfoSection>
-          <p>{`Lançamento: ${formatDate(movie.release_date)}`}</p>
-          <p>{`Nota: ${movie.vote_average}`}</p>
+          <p>{`${formatDate(movie.release_date)}`}</p>
+          <MovieNote>{`Nota: ${movie.vote_average}`}</MovieNote>
         </InfoSection>
       </InfoBlock>
       <LeftSideFade />

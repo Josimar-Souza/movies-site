@@ -4,6 +4,11 @@ const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
 
 const image = (props) => `${baseImageURL}${props.image}`;
 
+const MovieNote = styled.p`
+  font-weight: 700;
+  color: #2aff00;
+`;
+
 const LeftSideFade = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 1), 85%, rgba(0, 0, 0, 0));
   display: flex;
@@ -54,6 +59,7 @@ const styles = {
   InfoSection,
   LeftSideFade,
   BottomSideFade,
+  MovieNote,
 };
 
 export default styles;
