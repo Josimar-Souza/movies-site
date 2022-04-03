@@ -7,6 +7,7 @@ function Button(props) {
     children,
     onClick,
   } = props;
+
   return (
     <ButtonStyle
       onClick={onClick}

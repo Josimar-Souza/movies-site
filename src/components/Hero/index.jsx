@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './HeroStyle';
 import Button from '../Button';
 
 function Hero({ movie }) {
+  const navigate = useNavigate();
+
   const {
     HeroStyle,
     InfoBlock,
@@ -18,6 +21,10 @@ function Hero({ movie }) {
     return dateList[0];
   };
 
+  const onDetailsClick = () => {
+    navigate(`/details/${movie.id}`);
+  };
+
   // console.log(movie);
   return (
     <HeroStyle image={movie.backdrop_path}>
@@ -27,7 +34,11 @@ function Hero({ movie }) {
           <p>{`${formatDate(movie.release_date)}`}</p>
           <MovieNote>{`Nota: ${movie.vote_average}`}</MovieNote>
         </InfoSection>
-        <Button>Ver detalhes</Button>
+        <Button
+          onClick={onDetailsClick}
+        >
+          Ver detalhes
+        </Button>
       </InfoBlock>
       <LeftSideFade />
       <BottomSideFade />
@@ -37,6 +48,7 @@ function Hero({ movie }) {
 
 Hero.propTypes = {
   movie: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     backdrop_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,
