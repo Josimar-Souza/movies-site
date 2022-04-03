@@ -13,7 +13,9 @@ function MainPage() {
   }, []);
 
   return (
-    randomIndex && <Hero movie={movies.nowPlaying[randomIndex]} />
+    movies.nowPlaying.length > 0
+      ? <Hero movie={movies.nowPlaying[randomIndex]} />
+      : <h1>Loading</h1>
   );
 }
 

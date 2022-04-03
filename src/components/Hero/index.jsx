@@ -18,7 +18,7 @@ function Hero({ movie }) {
     return dateList[0];
   };
 
-  console.log(movie);
+  // console.log(movie);
   return (
     <HeroStyle image={movie.backdrop_path}>
       <InfoBlock>
