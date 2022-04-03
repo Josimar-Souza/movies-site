@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './HeroStyle';
+import Button from '../Button';
 
 function Hero({ movie }) {
   const {
@@ -26,6 +27,7 @@ function Hero({ movie }) {
           <p>{`${formatDate(movie.release_date)}`}</p>
           <MovieNote>{`Nota: ${movie.vote_average}`}</MovieNote>
         </InfoSection>
+        <Button>Ver detalhes</Button>
       </InfoBlock>
       <LeftSideFade />
       <BottomSideFade />

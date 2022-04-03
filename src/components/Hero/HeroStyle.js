@@ -33,13 +33,16 @@ const BottomSideFade = styled.div`
 
 const InfoSection = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const InfoBlock = styled.div`
   color: white;
+  display: flex;
+  flex-direction: column;
   margin-left: 15px;
   padding: 15px;
+  text-align: center;
   width: 20%;
   z-index: 1;
 `;
