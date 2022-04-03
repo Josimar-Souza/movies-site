@@ -32,13 +32,10 @@ const InfoSection = styled.section`
 `;
 
 const InfoBlock = styled.div`
-  background: rgba(216, 216, 216, 0.4);
-  border-radius: 15px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
   color: white;
   margin-left: 15px;
   padding: 15px;
-  width: 30%;
+  width: 20%;
   z-index: 1;
 `;
 
