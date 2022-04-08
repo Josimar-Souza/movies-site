@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Movies = styled.div`
+const Items = styled.div`
   display: flex;
   height: fit-content;
   margin-top: 15px;
@@ -23,7 +23,7 @@ const Movies = styled.div`
   }
 `;
 
-const MovieSectionStyle = styled.div`
+const ItemsSectionStyle = styled.div`
   background: #0f0f0f;
   color: white;
   padding 25px 0 25px 15px;
@@ -31,8 +31,8 @@ const MovieSectionStyle = styled.div`
 `;
 
 const styles = {
-  Movies,
-  MovieSectionStyle,
+  Items,
+  ItemsSectionStyle,
 };
 
 export default styles;

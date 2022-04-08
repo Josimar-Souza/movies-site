@@ -40,6 +40,8 @@ const InfoBlock = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
+  height: 20rem;
+  justify-content: space-around;
   margin-left: 15px;
   padding: 15px;
   text-align: center;
