@@ -1,10 +1,24 @@
 import React from 'react';
-import MovieCardStyle from './MovieCardStyle';
+import PropTypes from 'prop-types';
+import styles from './MovieCardStyle';
 
-function MovieCard() {
+const IMAGE_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL;
+
+function MovieCard({ movie }) {
+  const { MovieCardStyle, MovieImg } = styles;
+  console.log(movie);
   return (
-    <MovieCardStyle>Movie Card!</MovieCardStyle>
+    <MovieCardStyle>
+      <MovieImg src={`${IMAGE_BASE_URL}${movie.poster_path}`} />
+    </MovieCardStyle>
   );
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default MovieCard;
