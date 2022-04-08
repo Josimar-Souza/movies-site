@@ -10,7 +10,7 @@ const MovieNote = styled.p`
 `;
 
 const LeftSideFade = styled.div`
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), 85%, rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgba(15, 15, 15, 1), 85%, rgba(15, 15, 15, 0));
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -22,7 +22,7 @@ const LeftSideFade = styled.div`
 `;
 
 const BottomSideFade = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85) 55%, rgba(0, 0, 0, 1));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(15, 15, 15, 0.85) 55%, rgba(15, 15, 15, 1));
   bottom: 0;
   height: 10rem;
   margin: 0;
