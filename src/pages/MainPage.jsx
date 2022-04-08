@@ -11,6 +11,9 @@ function MainPage() {
 
   useEffect(() => {
     dispatch(actions.getNowPlaying());
+    dispatch(actions.getPopular());
+    dispatch(actions.getTopRated());
+    dispatch(actions.getUpcoming());
   }, []);
 
   return (
@@ -23,6 +26,18 @@ function MainPage() {
       <MovieSection
         title="No Cinema"
         movies={movies.nowPlaying}
+      />
+      <MovieSection
+        title="Filmes Populares"
+        movies={movies.popular}
+      />
+      <MovieSection
+        title="Mais Votados"
+        movies={movies.topRated}
+      />
+      <MovieSection
+        title="Em Breve"
+        movies={movies.upcoming}
       />
     </main>
   );
