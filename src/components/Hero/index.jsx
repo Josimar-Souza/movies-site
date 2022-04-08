@@ -22,7 +22,7 @@ function Hero({ movie }) {
   };
 
   const onDetailsClick = () => {
-    navigate(`/details/${movie.id}`);
+    navigate(`/details/movie/${movie.id}`);
   };
 
   // console.log(movie);
@@ -48,7 +48,7 @@ function Hero({ movie }) {
 
 Hero.propTypes = {
   movie: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     backdrop_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Hero from '../components/Hero';
+import MovieSection from '../components/MovieSection';
 import actions from '../redux/actions/movies/actions';
 
 function MainPage() {
@@ -10,12 +11,35 @@ function MainPage() {
 
   useEffect(() => {
     dispatch(actions.getNowPlaying());
+    dispatch(actions.getPopular());
+    dispatch(actions.getTopRated());
+    dispatch(actions.getUpcoming());
   }, []);
 
   return (
-    movies.nowPlaying.length > 0
-      ? <Hero movie={movies.nowPlaying[randomIndex]} />
-      : <h1>Loading</h1>
+    <main>
+      {
+        movies.nowPlaying.length > 0
+          ? <Hero movie={movies.nowPlaying[randomIndex]} />
+          : <h1>Loading</h1>
+      }
+      <MovieSection
+        title="No Cinema"
+        movies={movies.nowPlaying}
+      />
+      <MovieSection
+        title="Filmes Populares"
+        movies={movies.popular}
+      />
+      <MovieSection
+        title="Mais Votados"
+        movies={movies.topRated}
+      />
+      <MovieSection
+        title="Em Breve"
+        movies={movies.upcoming}
+      />
+    </main>
   );
 }
 
