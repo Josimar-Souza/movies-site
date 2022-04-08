@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './HeroStyle';
 import Button from '../Button';
 
-function Hero({ movie }) {
+function Hero({ item }) {
   const navigate = useNavigate();
 
   const {
@@ -22,17 +22,17 @@ function Hero({ movie }) {
   };
 
   const onDetailsClick = () => {
-    navigate(`/details/movie/${movie.id}`);
+    navigate(`/details/movie/${item.id}`);
   };
 
   // console.log(movie);
   return (
-    <HeroStyle image={movie.backdrop_path}>
+    <HeroStyle image={item.backdrop_path}>
       <InfoBlock>
-        <h1>{movie.title}</h1>
+        <h1>{item.title}</h1>
         <InfoSection>
-          <p>{`${formatDate(movie.release_date)}`}</p>
-          <MovieNote>{`Nota: ${movie.vote_average}`}</MovieNote>
+          <p>{`${formatDate(item.release_date)}`}</p>
+          <MovieNote>{`Nota: ${item.vote_average}`}</MovieNote>
         </InfoSection>
         <Button
           onClick={onDetailsClick}
@@ -47,7 +47,7 @@ function Hero({ movie }) {
 }
 
 Hero.propTypes = {
-  movie: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     backdrop_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

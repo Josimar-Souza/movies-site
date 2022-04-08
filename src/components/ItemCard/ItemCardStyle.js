@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const MovieImg = styled.img`
+const ItemImg = styled.img`
   width: 12rem;
 `;
 
-const MovieCardStyle = styled.div`
+const ItemCardStyle = styled.div`
   margin: 0 8px;
   padding: 15px;
   width: 50%;
@@ -17,8 +17,8 @@ const MovieCardStyle = styled.div`
 `;
 
 const styles = {
-  MovieImg,
-  MovieCardStyle,
+  ItemImg,
+  ItemCardStyle,
 };
 
 export default styles;
