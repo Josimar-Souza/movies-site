@@ -12,6 +12,7 @@ const MovieCardStyle = styled.div`
 
   &:hover {
     transform: scale(1.12, 1.12);
+    cursor: pointer;
   }
 `;
 
