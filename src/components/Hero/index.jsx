@@ -22,7 +22,7 @@ function Hero({ movie }) {
   };
 
   const onDetailsClick = () => {
-    navigate(`/details/${movie.id}`);
+    navigate(`/details/movie/${movie.id}`);
   };
 
   // console.log(movie);

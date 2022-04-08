@@ -10,7 +10,7 @@ function MovieCard({ movie }) {
   const { MovieCardStyle, MovieImg } = styles;
 
   const onCardClick = () => {
-    navigate(`/details/${movie.id}`);
+    navigate(`/details/movie/${movie.id}`);
   };
 
   return (
