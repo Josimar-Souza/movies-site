@@ -1,7 +1,7 @@
-import MainPage from './MainPage';
+import MoviesPage from './MoviesPage';
 
 const pages = {
-  MainPage,
+  MoviesPage,
 };
 
 export default pages;

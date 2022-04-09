@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Navigate to="/movies" />} />
-        <Route exact path="/movies" element={<pages.MainPage />} />
+        <Route exact path="/movies" element={<pages.MoviesPage />} />
       </Routes>
     </main>
   );
