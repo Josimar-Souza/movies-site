@@ -10,7 +10,9 @@ function ItemCard({ item, type }) {
   const { ItemCardStyle, ItemImg } = styles;
 
   const onCardClick = () => {
-    navigate(`/details/${type === 'series' ? 'series' : 'movies'}/${item.id}`);
+    navigate(
+      `/${type === 'series' ? 'series' : 'movies'}/details/${item.id}`,
+    );
   };
 
   return (
@@ -20,13 +22,17 @@ function ItemCard({ item, type }) {
   );
 }
 
+ItemCard.defaultProps = {
+  type: 'movies',
+};
+
 ItemCard.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     title: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
   }).isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };
 
 export default ItemCard;

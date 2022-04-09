@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './HeroStyle';
 import Button from '../Button';
 
-function Hero({ item }) {
+function Hero({ item, type }) {
   const navigate = useNavigate();
 
   const {
@@ -22,7 +22,9 @@ function Hero({ item }) {
   };
 
   const onDetailsClick = () => {
-    navigate(`/details/movie/${item.id}`);
+    navigate(
+      `/${type === 'series' ? 'series' : 'movies'}/details/${item.id}`,
+    );
   };
 
   // console.log(movie);
@@ -46,6 +48,10 @@ function Hero({ item }) {
   );
 }
 
+Hero.defaultProps = {
+  type: 'movies',
+};
+
 Hero.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -54,6 +60,7 @@ Hero.propTypes = {
     release_date: PropTypes.string.isRequired,
     vote_average: PropTypes.number.isRequired,
   }).isRequired,
+  type: PropTypes.string,
 };
 
 export default Hero;
