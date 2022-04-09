@@ -17,7 +17,7 @@ function MainPage() {
   }, []);
 
   return (
-    <main>
+    <section>
       {
         movies.nowPlaying.length > 0
           ? <Hero type="movies" item={movies.nowPlaying[randomIndex]} />
@@ -43,7 +43,7 @@ function MainPage() {
         items={movies.upcoming}
         type="movies"
       />
-    </main>
+    </section>
   );
 }
 
