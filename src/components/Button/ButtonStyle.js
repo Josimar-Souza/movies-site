@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
+const getWidth = (({ width }) => width);
+
 const ButtonStyle = styled.button`
   border: none;
   border-radius: 8px;
   font-size: 1.3rem;
   font-weight: 700;
   height: 52px;
-  margin: 15px auto;
+  padding: 8px;
   transition: 0.2s;
-  width: 52%;
+  width: ${getWidth};
 
   &:hover {
     color: white;

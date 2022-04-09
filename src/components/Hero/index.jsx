@@ -38,6 +38,7 @@ function Hero({ item, type }) {
         </InfoSection>
         <Button
           onClick={onDetailsClick}
+          width="60%"
         >
           Ver detalhes
         </Button>
