@@ -3,11 +3,11 @@ const SERIES_ON_THE_AIR = 'SERIES_ON_THE_AIR';
 const SERIES_POPULAR = 'SERIES_POPULAR';
 const SERIES_TOP_RATED = 'SERIES_TOP_RATED';
 
-const actionTypes = {
+const actionsTypes = {
   SERIES_AIRING_TODAY,
   SERIES_ON_THE_AIR,
   SERIES_POPULAR,
   SERIES_TOP_RATED,
 };
 
-export default actionTypes;
+export default actionsTypes;
