@@ -33,10 +33,18 @@ const getPopular = () => (dispatch) => {
   }));
 };
 
+const getTopRated = () => (dispatch) => {
+  seriesAPI.getTopRated().then((payload) => dispatch({
+    type: SERIES_TOP_RATED,
+    payload,
+  }));
+};
+
 const actions = {
   getAiringToday,
   getOnTheAir,
   getPopular,
+  getTopRated,
 };
 
 export default actions;
