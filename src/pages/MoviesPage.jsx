@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import ItemsSection from '../components/ItemsSection';
 import actions from '../redux/actions/movies/actions';
 
-function MainPage() {
+function MoviesPage() {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movieReducer.movies);
   const randomIndex = Math.floor(Math.random() * (movies.nowPlaying.length - 1));
@@ -47,4 +47,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default MoviesPage;
