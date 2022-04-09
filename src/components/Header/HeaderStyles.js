@@ -10,9 +10,8 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderStyle = styled.div`
-  background: #303030;
+  background: rgba(48, 48, 48, 0.7);
   border-radius: 15px;
-  box-shadow: 6px 6px 2px rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: space-around;
   padding: 15px;
