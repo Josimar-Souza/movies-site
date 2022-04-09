@@ -6,7 +6,7 @@ import actions from '../redux/actions/movies/actions';
 
 function MainPage() {
   const dispatch = useDispatch();
-  const movies = useSelector((state) => state[0].movies);
+  const movies = useSelector((state) => state.movieReducer.movies);
   const randomIndex = Math.floor(Math.random() * (movies.nowPlaying.length - 1));
 
   useEffect(() => {
