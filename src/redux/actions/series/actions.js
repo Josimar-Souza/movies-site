@@ -26,9 +26,17 @@ const getOnTheAir = () => (dispatch) => {
   }));
 };
 
+const getPopular = () => (dispatch) => {
+  seriesAPI.getPopular().then((payload) => dispatch({
+    type: SERIES_POPULAR,
+    payload,
+  }));
+};
+
 const actions = {
   getAiringToday,
   getOnTheAir,
+  getPopular,
 };
 
 export default actions;
