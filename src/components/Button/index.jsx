@@ -7,12 +7,14 @@ function Button(props) {
     children,
     onClick,
     width,
+    name,
   } = props;
 
   return (
     <ButtonStyle
       width={width}
       onClick={onClick}
+      name={name}
     >
       { children }
     </ButtonStyle>
@@ -22,12 +24,14 @@ function Button(props) {
 Button.defaultProps = {
   onClick: () => {},
   width: '50%',
+  name: '',
 };
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   width: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default Button;
