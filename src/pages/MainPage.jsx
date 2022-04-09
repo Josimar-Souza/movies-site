@@ -20,7 +20,7 @@ function MainPage() {
     <main>
       {
         movies.nowPlaying.length > 0
-          ? <Hero item={movies.nowPlaying[randomIndex]} />
+          ? <Hero type="movies" item={movies.nowPlaying[randomIndex]} />
           : <h1>Loading</h1>
       }
       <ItemsSection

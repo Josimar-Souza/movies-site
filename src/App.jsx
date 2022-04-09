@@ -1,12 +1,13 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import pages from './pages';
 import './App.css';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<pages.MainPage />} />
+      <Route exact path="/" element={<Navigate to="/movies" />} />
+      <Route exact path="/movies" element={<pages.MainPage />} />
     </Routes>
   );
 }
