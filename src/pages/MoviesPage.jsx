@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Hero from '../components/Hero';
+import MovieHero from '../components/MovieHero';
 import ItemsSection from '../components/ItemsSection';
 import actions from '../redux/actions/movies/actions';
 
@@ -20,7 +20,7 @@ function MoviesPage() {
     <section>
       {
         movies.nowPlaying.length > 0
-          ? <Hero type="movies" item={movies.nowPlaying[randomIndex]} />
+          ? <MovieHero item={movies.nowPlaying[randomIndex]} />
           : <h1>Loading</h1>
       }
       <ItemsSection

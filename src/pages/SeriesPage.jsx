@@ -5,6 +5,7 @@ import actions from '../redux/actions/series/actions';
 function SeriesPage() {
   const dispatch = useDispatch();
   const series = useSelector((state) => state.seriesReducer.series);
+  // const randomIndex = Math.floor(Math.random() * (series.popular.length - 1));
 
   useEffect(() => {
     dispatch(actions.getAiringToday());
@@ -13,10 +14,22 @@ function SeriesPage() {
     dispatch(actions.getTopRated());
   }, []);
 
-  console.log(series);
+  const getSeriesPage = () => {
+    if (series.airingToday.length > 0) {
+      return (
+        <h1>Building!</h1>
+      );
+    }
+
+    return (
+      <h1>Loading...</h1>
+    );
+  };
 
   return (
-    <h1>Series Page!</h1>
+    <section>
+      {getSeriesPage()}
+    </section>
   );
 }
 
