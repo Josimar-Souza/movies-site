@@ -27,11 +27,19 @@ function Hero({ item, type }) {
     );
   };
 
+  const getTitle = () => {
+    if (type === 'series') {
+      return item.name;
+    }
+
+    return item.title;
+  };
+
   // console.log(movie);
   return (
     <HeroStyle image={item.backdrop_path}>
       <InfoBlock>
-        <h1>{item.title}</h1>
+        <h1>{getTitle()}</h1>
         <InfoSection>
           <p>{`${formatDate(item.release_date)}`}</p>
           <MovieNote>{`Nota: ${item.vote_average}`}</MovieNote>
@@ -51,16 +59,21 @@ function Hero({ item, type }) {
 
 Hero.defaultProps = {
   type: 'movies',
+  item: {
+    name: '',
+    title: '',
+  },
 };
 
 Hero.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     backdrop_path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    name: PropTypes.string,
     release_date: PropTypes.string.isRequired,
     vote_average: PropTypes.number.isRequired,
-  }).isRequired,
+  }),
   type: PropTypes.string,
 };
 
