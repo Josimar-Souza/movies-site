@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from '../redux/actions/series/actions';
+import SeriesHero from '../components/SeriesHero';
 
 function SeriesPage() {
   const dispatch = useDispatch();
   const series = useSelector((state) => state.seriesReducer.series);
-  // const randomIndex = Math.floor(Math.random() * (series.popular.length - 1));
+  const randomIndex = Math.floor(Math.random() * (series.popular.length - 1));
 
   useEffect(() => {
     dispatch(actions.getAiringToday());
@@ -15,9 +16,9 @@ function SeriesPage() {
   }, []);
 
   const getSeriesPage = () => {
-    if (series.airingToday.length > 0) {
+    if (series.popular.length > 0) {
       return (
-        <h1>Building!</h1>
+        <SeriesHero serie={series.popular[randomIndex]} />
       );
     }
 
