@@ -9,7 +9,11 @@ const moviesAPI = new MoviesAPI(baseURL);
 function MoviesDetails() {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
-  const { DetailsBackgorund } = styles;
+
+  const {
+    DetailsBackgorund,
+    MovieDetailsContainer,
+  } = styles;
 
   useEffect(() => {
     const getMovieDetails = async () => {
@@ -23,9 +27,12 @@ function MoviesDetails() {
   console.log(movieDetails);
 
   return (
-    <DetailsBackgorund image={movieDetails.backdrop_path}>
-      <h1>Details Page!</h1>
-    </DetailsBackgorund>
+    <section>
+      <DetailsBackgorund image={movieDetails.backdrop_path} />
+      <MovieDetailsContainer>
+        MovieDetail
+      </MovieDetailsContainer>
+    </section>
   );
 }
 

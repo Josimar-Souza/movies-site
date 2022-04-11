@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MovieHero from '../../components/MovieHero';
 import ItemsSection from '../../components/ItemsSection';
 import actions from '../../redux/actions/movies/actions';
+import Header from '../../components/Header';
 
 function MoviesPage() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function MoviesPage() {
 
   return (
     <section>
+      <Header />
       {
         movies.nowPlaying.length > 0
           ? <MovieHero Movie={movies.nowPlaying[randomIndex]} />
