@@ -22,8 +22,13 @@ function SeriesPage() {
         <section>
           <SeriesHero serie={series.popular[randomIndex]} />
           <ItemsSection
-            title="Series com episódios hoje"
+            title="Séries com episódios hoje"
             items={series.airingToday}
+            type="series"
+          />
+          <ItemsSection
+            title="Séries com episódios essa semana"
+            items={series.onTheAir}
             type="series"
           />
         </section>
