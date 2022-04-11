@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Navigate to="/movies" />} />
         <Route exact path="/movies" element={<pages.MoviesPage />} />
+        <Route exact path="/series" element={<pages.SeriesPage />} />
       </Routes>
     </main>
   );
