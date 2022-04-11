@@ -36,6 +36,11 @@ function SeriesPage() {
             items={series.popular}
             type="series"
           />
+          <ItemsSection
+            title="Séries mais votadas"
+            items={series.topRated}
+            type="series"
+          />
         </section>
       );
     }
