@@ -21,6 +21,8 @@ function MoviesDetails() {
     MovieOverview,
     GenresContainer,
     MovieGenre,
+    MovieTecnicalInfo,
+    MovieNote,
   } = styles;
 
   useEffect(() => {
@@ -44,6 +46,10 @@ function MoviesDetails() {
           </MovieDetailsImageContainer>
           <MovieInfoContainer>
             <MovieTitle>{movieDetails.title}</MovieTitle>
+            <MovieTecnicalInfo>
+              <p>{`${movieDetails.runtime}m`}</p>
+              <MovieNote>{`Nota: ${movieDetails.vote_average}`}</MovieNote>
+            </MovieTecnicalInfo>
             <GenresContainer>
               {
                 movieDetails.genres.map(

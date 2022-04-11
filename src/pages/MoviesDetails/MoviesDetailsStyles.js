@@ -3,6 +3,11 @@ import getImageURL from '../../utils/getImageURL';
 
 const image = (props) => getImageURL(props.image);
 
+const MovieNote = styled.p`
+  color: #2aff00;
+  margin-bottom: 15px;
+`;
+
 const MovieGenre = styled.p`
   margin: 0 10px;
 `;
@@ -11,6 +16,12 @@ const GenresContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
+  width: 90%;
+`;
+
+const MovieTecnicalInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
   width: 90%;
 `;
 
@@ -71,6 +82,8 @@ const styles = {
   MovieOverview,
   GenresContainer,
   MovieGenre,
+  MovieTecnicalInfo,
+  MovieNote,
 };
 
 export default styles;
