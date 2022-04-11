@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../redux/actions/series/actions';
-import SeriesHero from '../components/SeriesHero';
-import ItemsSection from '../components/ItemsSection';
+import actions from '../../redux/actions/series/actions';
+import SeriesHero from '../../components/SeriesHero';
+import ItemsSection from '../../components/ItemsSection';
 
 function SeriesPage() {
   const dispatch = useDispatch();

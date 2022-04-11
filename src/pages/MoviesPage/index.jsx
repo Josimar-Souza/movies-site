@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MovieHero from '../components/MovieHero';
-import ItemsSection from '../components/ItemsSection';
-import actions from '../redux/actions/movies/actions';
+import MovieHero from '../../components/MovieHero';
+import ItemsSection from '../../components/ItemsSection';
+import actions from '../../redux/actions/movies/actions';
 
 function MoviesPage() {
   const dispatch = useDispatch();
