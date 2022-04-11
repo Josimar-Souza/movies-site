@@ -20,7 +20,7 @@ function MoviesPage() {
     <section>
       {
         movies.nowPlaying.length > 0
-          ? <MovieHero item={movies.nowPlaying[randomIndex]} />
+          ? <MovieHero Movie={movies.nowPlaying[randomIndex]} />
           : <h1>Loading</h1>
       }
       <ItemsSection

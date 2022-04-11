@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './HeroStyle';
 import Button from '../Button';
+import LeftSideFade from '../LeftSideFade';
+import BottomSideFade from '../BottomSideFade';
 
-function MovieHero({ item }) {
+function MovieHero({ Movie }) {
   const navigate = useNavigate();
 
   const {
     HeroStyle,
     InfoBlock,
     InfoSection,
-    LeftSideFade,
-    BottomSideFade,
     MovieNote,
   } = styles;
 
@@ -23,18 +23,18 @@ function MovieHero({ item }) {
 
   const onDetailsClick = () => {
     navigate(
-      `/movies/details/${item.id}`,
+      `/movies/details/${Movie.id}`,
     );
   };
 
   // console.log(movie);
   return (
-    <HeroStyle image={item.backdrop_path}>
+    <HeroStyle image={Movie.backdrop_path}>
       <InfoBlock>
-        <h1>{item.title}</h1>
+        <h1>{Movie.title}</h1>
         <InfoSection>
-          <p>{`${formatDate(item.release_date)}`}</p>
-          <MovieNote>{`Nota: ${item.vote_average}`}</MovieNote>
+          <p>{`${formatDate(Movie.release_date)}`}</p>
+          <MovieNote>{`Nota: ${Movie.vote_average}`}</MovieNote>
         </InfoSection>
         <Button
           onClick={onDetailsClick}
@@ -50,7 +50,7 @@ function MovieHero({ item }) {
 }
 
 MovieHero.propTypes = {
-  item: PropTypes.shape({
+  Movie: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     backdrop_path: PropTypes.string.isRequired,
     title: PropTypes.string,

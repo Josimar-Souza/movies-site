@@ -9,28 +9,6 @@ const MovieNote = styled.p`
   color: #2aff00;
 `;
 
-const LeftSideFade = styled.div`
-  background: linear-gradient(to right, rgba(15, 15, 15, 1), 85%, rgba(15, 15, 15, 0));
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 30%;
-`;
-
-const BottomSideFade = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(15, 15, 15, 0.85) 55%, rgba(15, 15, 15, 1));
-  bottom: 0;
-  height: 10rem;
-  margin: 0;
-  position: absolute;
-  right: 0;
-  width: 90%;
-`;
-
 const InfoSection = styled.section`
   display: flex;
   justify-content: space-around;
@@ -64,8 +42,6 @@ const styles = {
   HeroStyle,
   InfoBlock,
   InfoSection,
-  LeftSideFade,
-  BottomSideFade,
   MovieNote,
 };
 
