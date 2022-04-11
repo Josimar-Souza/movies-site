@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import actions from '../redux/actions/series/actions';
 import SeriesHero from '../components/SeriesHero';
+import ItemsSection from '../components/ItemsSection';
 
 function SeriesPage() {
   const dispatch = useDispatch();
@@ -18,7 +19,29 @@ function SeriesPage() {
   const getSeriesPage = () => {
     if (series.popular.length > 0) {
       return (
-        <SeriesHero serie={series.popular[randomIndex]} />
+        <section>
+          <SeriesHero serie={series.popular[randomIndex]} />
+          <ItemsSection
+            title="Séries com episódios hoje"
+            items={series.airingToday}
+            type="series"
+          />
+          <ItemsSection
+            title="Séries com episódios essa semana"
+            items={series.onTheAir}
+            type="series"
+          />
+          <ItemsSection
+            title="Séries populares"
+            items={series.popular}
+            type="series"
+          />
+          <ItemsSection
+            title="Séries mais votadas"
+            items={series.topRated}
+            type="series"
+          />
+        </section>
       );
     }
 
