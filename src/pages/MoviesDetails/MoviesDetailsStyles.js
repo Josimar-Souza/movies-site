@@ -3,9 +3,19 @@ import getImageURL from '../../utils/getImageURL';
 
 const image = (props) => getImageURL(props.image);
 
+const DetailsImage = styled.img`
+  width: 100%;
+`;
+
+const DetailsImageContainer = styled.div`
+  width: 40%;
+`;
+
 const MovieDetailsContainer = styled.div`
   background: rgba(48, 48, 48, 0.7);
-  margin: 20rem auto 0 auto;
+  color: white;
+  display: flex;
+  margin: 5rem auto;
   width: 85%;
 `;
 
@@ -22,6 +32,8 @@ const DetailsBackgorund = styled.div`
 const styles = {
   DetailsBackgorund,
   MovieDetailsContainer,
+  DetailsImageContainer,
+  DetailsImage,
 };
 
 export default styles;
