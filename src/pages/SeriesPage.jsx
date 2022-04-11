@@ -31,6 +31,11 @@ function SeriesPage() {
             items={series.onTheAir}
             type="series"
           />
+          <ItemsSection
+            title="Séries populares"
+            items={series.popular}
+            type="series"
+          />
         </section>
       );
     }
