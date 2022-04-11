@@ -3,8 +3,13 @@ import getImageURL from '../../utils/getImageURL';
 
 const image = (props) => getImageURL(props.image);
 
+const MovieOverview = styled.p`
+  text-align: justify;
+`;
+
 const MovieTitle = styled.h1`
   text-align: center;
+  margin-bottom: 15px;
 `;
 
 const MovieInfoContainer = styled.div`
@@ -12,6 +17,7 @@ const MovieInfoContainer = styled.div`
   border: 1px solid red;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 2rem;
   width: 50%;
 `;
@@ -52,6 +58,7 @@ const styles = {
   MovieDetailsImage,
   MovieInfoContainer,
   MovieTitle,
+  MovieOverview,
 };
 
 export default styles;

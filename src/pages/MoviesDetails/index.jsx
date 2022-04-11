@@ -18,6 +18,7 @@ function MoviesDetails() {
     MovieDetailsImage,
     MovieInfoContainer,
     MovieTitle,
+    MovieOverview,
   } = styles;
 
   useEffect(() => {
@@ -40,6 +41,7 @@ function MoviesDetails() {
         </MovieDetailsImageContainer>
         <MovieInfoContainer>
           <MovieTitle>{movieDetails.title}</MovieTitle>
+          <MovieOverview>{movieDetails.overview}</MovieOverview>
         </MovieInfoContainer>
       </MovieDetailsContainer>
     </section>
