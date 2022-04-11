@@ -3,6 +3,17 @@ import getImageURL from '../../utils/getImageURL';
 
 const image = (props) => getImageURL(props.image);
 
+const MovieGenre = styled.p`
+  margin: 0 10px;
+`;
+
+const GenresContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 90%;
+`;
+
 const MovieOverview = styled.p`
   text-align: justify;
 `;
@@ -17,7 +28,6 @@ const MovieInfoContainer = styled.div`
   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   padding: 2rem;
   width: 50%;
 `;
@@ -59,6 +69,8 @@ const styles = {
   MovieInfoContainer,
   MovieTitle,
   MovieOverview,
+  GenresContainer,
+  MovieGenre,
 };
 
 export default styles;

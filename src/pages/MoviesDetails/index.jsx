@@ -19,6 +19,8 @@ function MoviesDetails() {
     MovieInfoContainer,
     MovieTitle,
     MovieOverview,
+    GenresContainer,
+    MovieGenre,
   } = styles;
 
   useEffect(() => {
@@ -32,19 +34,32 @@ function MoviesDetails() {
 
   console.log(movieDetails);
 
+  if (Object.keys(movieDetails).length > 0) {
+    return (
+      <section>
+        <DetailsBackgorund image={movieDetails.backdrop_path} />
+        <MovieDetailsContainer>
+          <MovieDetailsImageContainer>
+            <MovieDetailsImage src={getImageURL(movieDetails.poster_path)} />
+          </MovieDetailsImageContainer>
+          <MovieInfoContainer>
+            <MovieTitle>{movieDetails.title}</MovieTitle>
+            <GenresContainer>
+              {
+                movieDetails.genres.map(
+                  (genre) => <MovieGenre key={genre.id}>{genre.name}</MovieGenre>,
+                )
+              }
+            </GenresContainer>
+            <MovieOverview>{movieDetails.overview}</MovieOverview>
+          </MovieInfoContainer>
+        </MovieDetailsContainer>
+      </section>
+    );
+  }
+
   return (
-    <section>
-      <DetailsBackgorund image={movieDetails.backdrop_path} />
-      <MovieDetailsContainer>
-        <MovieDetailsImageContainer>
-          <MovieDetailsImage src={getImageURL(movieDetails.poster_path)} />
-        </MovieDetailsImageContainer>
-        <MovieInfoContainer>
-          <MovieTitle>{movieDetails.title}</MovieTitle>
-          <MovieOverview>{movieDetails.overview}</MovieOverview>
-        </MovieInfoContainer>
-      </MovieDetailsContainer>
-    </section>
+    <h1>Loading...</h1>
   );
 }
 
