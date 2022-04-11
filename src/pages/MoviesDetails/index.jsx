@@ -14,8 +14,10 @@ function MoviesDetails() {
   const {
     DetailsBackgorund,
     MovieDetailsContainer,
-    DetailsImageContainer,
-    DetailsImage,
+    MovieDetailsImageContainer,
+    MovieDetailsImage,
+    MovieInfoContainer,
+    MovieTitle,
   } = styles;
 
   useEffect(() => {
@@ -33,9 +35,12 @@ function MoviesDetails() {
     <section>
       <DetailsBackgorund image={movieDetails.backdrop_path} />
       <MovieDetailsContainer>
-        <DetailsImageContainer>
-          <DetailsImage src={getImageURL(movieDetails.poster_path)} />
-        </DetailsImageContainer>
+        <MovieDetailsImageContainer>
+          <MovieDetailsImage src={getImageURL(movieDetails.poster_path)} />
+        </MovieDetailsImageContainer>
+        <MovieInfoContainer>
+          <MovieTitle>{movieDetails.title}</MovieTitle>
+        </MovieInfoContainer>
       </MovieDetailsContainer>
     </section>
   );
