@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './HeroStyle';
 import Button from '../Button';
+import LeftSideFade from '../LeftSideFade';
 
 function MovieHero({ item }) {
   const navigate = useNavigate();
@@ -11,8 +12,6 @@ function MovieHero({ item }) {
     HeroStyle,
     InfoBlock,
     InfoSection,
-    LeftSideFade,
-    BottomSideFade,
     MovieNote,
   } = styles;
 
@@ -44,7 +43,7 @@ function MovieHero({ item }) {
         </Button>
       </InfoBlock>
       <LeftSideFade />
-      <BottomSideFade />
+      {/* <BottomSideFade /> */}
     </HeroStyle>
   );
 }
