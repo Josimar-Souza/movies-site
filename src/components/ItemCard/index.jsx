@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ItemCardStyle';
-
-const IMAGE_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL;
+import getImageURL from '../../utils/getImageURL';
 
 function ItemCard({ item, type }) {
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ function ItemCard({ item, type }) {
 
   return (
     <ItemCardStyle onClick={onCardClick}>
-      <ItemImg src={`${IMAGE_BASE_URL}${item.poster_path}`} />
+      <ItemImg src={getImageURL(item.poster_path)} />
     </ItemCardStyle>
   );
 }
