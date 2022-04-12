@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const TrailerIframe = styled.iframe`
-  height: 280px;
+  height: 350px;
   margin 20px 0;
   width: 100%;
 `;

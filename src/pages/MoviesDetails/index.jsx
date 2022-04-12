@@ -59,8 +59,13 @@ function MoviesDetails() {
   };
 
   const getMovieTrailer = () => {
+    let trailer = {};
     if (movieVideos.length > 0) {
-      return getTrailer(movieVideos).key;
+      trailer = getTrailer(movieVideos);
+    }
+
+    if (trailer) {
+      return trailer.key;
     }
 
     return '';
