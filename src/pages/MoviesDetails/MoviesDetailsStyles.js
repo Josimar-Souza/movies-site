@@ -52,10 +52,12 @@ const MovieInfoContainer = styled.div`
 `;
 
 const MovieDetailsImage = styled.img`
+  margin-bottom: 2rem;
   width: 100%;
 `;
 
-const MovieDetailsImageContainer = styled.div`
+const MovieDetailsImageTrailerContainer = styled.div`
+  text-align: center;
   width: 40%;
 `;
 
@@ -83,7 +85,7 @@ const DetailsBackgorund = styled.div`
 const styles = {
   DetailsBackgorund,
   MovieDetailsContainer,
-  MovieDetailsImageContainer,
+  MovieDetailsImageTrailerContainer,
   MovieDetailsImage,
   MovieInfoContainer,
   MovieTitle,

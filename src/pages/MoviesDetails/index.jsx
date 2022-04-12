@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import styles from './MoviesDetailsStyles';
 import MoviesAPI from '../../api/moviesAPI';
 import getImageURL from '../../utils/getImageURL';
+import getTrailer from '../../utils/getTrailer';
 import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
+import Trailer from '../../components/Trailer';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
@@ -11,11 +13,12 @@ const moviesAPI = new MoviesAPI(baseURL);
 function MoviesDetails() {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
+  const [movieVideos, setMovieVideos] = useState([]);
 
   const {
     DetailsBackgorund,
     MovieDetailsContainer,
-    MovieDetailsImageContainer,
+    MovieDetailsImageTrailerContainer,
     MovieDetailsImage,
     MovieInfoContainer,
     MovieTitle,
@@ -30,7 +33,10 @@ function MoviesDetails() {
   useEffect(() => {
     const getMovieDetails = async () => {
       const details = await moviesAPI.getDetails(id);
+      const videos = await moviesAPI.getVideos(id);
+
       setMovieDetails(details);
+      setMovieVideos(videos);
     };
 
     getMovieDetails();
@@ -52,14 +58,29 @@ function MoviesDetails() {
     return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
   };
 
+  const getMovieTrailer = () => {
+    let trailer = {};
+    if (movieVideos.length > 0) {
+      trailer = getTrailer(movieVideos);
+    }
+
+    if (trailer) {
+      return trailer.key;
+    }
+
+    return '';
+  };
+
   if (Object.keys(movieDetails).length > 0) {
     return (
       <section>
         <DetailsBackgorund image={movieDetails.backdrop_path} />
         <MovieDetailsContainer>
-          <MovieDetailsImageContainer>
+          <MovieDetailsImageTrailerContainer>
             <MovieDetailsImage src={getImageURL(movieDetails.poster_path)} />
-          </MovieDetailsImageContainer>
+            <h3>Trailer</h3>
+            <Trailer trailerKey={getMovieTrailer()} />
+          </MovieDetailsImageTrailerContainer>
           <MovieInfoContainer>
             <MovieTitle>{movieDetails.title}</MovieTitle>
             <MovieTecnicalInfo>
