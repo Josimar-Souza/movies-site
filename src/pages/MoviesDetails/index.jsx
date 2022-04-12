@@ -30,6 +30,7 @@ function MoviesDetails() {
   useEffect(() => {
     const getMovieDetails = async () => {
       const details = await moviesAPI.getDetails(id);
+      moviesAPI.getVideos(id);
       setMovieDetails(details);
     };
 
