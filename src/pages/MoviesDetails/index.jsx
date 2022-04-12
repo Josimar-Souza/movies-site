@@ -45,6 +45,11 @@ function MoviesDetails() {
     return formatter.format(number);
   };
 
+  const dateFormatter = (date) => {
+    const dateSplited = date.split('-');
+    return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
+  };
+
   if (Object.keys(movieDetails).length > 0) {
     return (
       <section>
@@ -62,6 +67,10 @@ function MoviesDetails() {
             <MovieTecnicalInfo>
               <p>{`${movieDetails.runtime}m`}</p>
               <MovieNote>{`Nota: ${movieDetails.vote_average}`}</MovieNote>
+            </MovieTecnicalInfo>
+            <MovieTecnicalInfo>
+              <p>{dateFormatter(movieDetails.release_date)}</p>
+              <p>{`Status: ${movieDetails.status}`}</p>
             </MovieTecnicalInfo>
             <GenresContainer>
               {

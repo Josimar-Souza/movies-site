@@ -5,7 +5,6 @@ const image = (props) => getImageURL(props.image);
 
 const MovieNote = styled.p`
   color: #2aff00;
-  margin-bottom: 15px;
 `;
 
 const MovieGenre = styled.p`
@@ -15,18 +14,19 @@ const MovieGenre = styled.p`
 const GenresContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  margin: 15px 0;
   width: 90%;
 `;
 
 const MovieTecnicalInfo = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  margin: 15px 0;
   width: 90%;
 `;
 
 const MovieOverview = styled.p`
+  margin: 15px 0;
   text-align: justify;
 `;
 
