@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import styles from './MoviesDetailsStyles';
 import MoviesAPI from '../../api/moviesAPI';
 import getImageURL from '../../utils/getImageURL';
+import getTrailer from '../../utils/getTrailer';
 import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 import Trailer from '../../components/Trailer';
 
@@ -57,6 +58,14 @@ function MoviesDetails() {
     return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
   };
 
+  const getMovieTrailer = () => {
+    if (movieVideos.length > 0) {
+      return getTrailer(movieVideos).key;
+    }
+
+    return '';
+  };
+
   if (Object.keys(movieDetails).length > 0) {
     return (
       <section>
@@ -95,7 +104,7 @@ function MoviesDetails() {
                 )
               }
             </ProductionCompaniesContainer>
-            <Trailer />
+            <Trailer trailerKey={getMovieTrailer()} />
           </MovieInfoContainer>
         </MovieDetailsContainer>
       </section>
