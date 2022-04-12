@@ -4,6 +4,7 @@ import styles from './MoviesDetailsStyles';
 import MoviesAPI from '../../api/moviesAPI';
 import getImageURL from '../../utils/getImageURL';
 import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
+import Trailer from '../../components/Trailer';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
@@ -94,6 +95,7 @@ function MoviesDetails() {
                 )
               }
             </ProductionCompaniesContainer>
+            <Trailer />
           </MovieInfoContainer>
         </MovieDetailsContainer>
       </section>
