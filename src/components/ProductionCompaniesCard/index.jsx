@@ -8,6 +8,7 @@ function ProductionCompaniesCard({ companie }) {
   return (
     <CompanieCard>
       <CompanieImage src={getImageURL(companie.logo_path)} />
+      <h3>{companie.name}</h3>
     </CompanieCard>
   );
 }
@@ -15,6 +16,7 @@ function ProductionCompaniesCard({ companie }) {
 ProductionCompaniesCard.propTypes = {
   companie: PropTypes.shape({
     logo_path: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }).isRequired,
 };
 

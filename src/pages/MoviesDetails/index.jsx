@@ -83,6 +83,7 @@ function MoviesDetails() {
             </GenresContainer>
             <MovieOverview>{movieDetails.overview}</MovieOverview>
             <ProductionCompaniesContainer>
+              <h2>Empresas de produção</h2>
               {
                 movieDetails.production_companies.map(
                   (companie) => <ProductionCompaniesCard key={companie.id} companie={companie} />,

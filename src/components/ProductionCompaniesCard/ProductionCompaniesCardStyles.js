@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const CompanieImage = styled.img`
+  margin-bottom: 15px;
   width: 100%;
 `;
 
 const CompanieCard = styled.div`
-  border: 1px solid yellow;
-  margin 12px 0;
+  margin 2rem 0;
+  text-align: center;
   width: 100%;
 `;
 
