@@ -21,7 +21,8 @@ const GenresContainer = styled.div`
 
 const MovieTecnicalInfo = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: 15px;
   width: 90%;
 `;
 

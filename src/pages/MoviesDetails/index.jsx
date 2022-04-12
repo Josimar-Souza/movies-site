@@ -36,6 +36,15 @@ function MoviesDetails() {
 
   console.log(movieDetails);
 
+  const currencyFormatter = (number) => {
+    const formatter = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+
+    return formatter.format(number);
+  };
+
   if (Object.keys(movieDetails).length > 0) {
     return (
       <section>
@@ -46,6 +55,10 @@ function MoviesDetails() {
           </MovieDetailsImageContainer>
           <MovieInfoContainer>
             <MovieTitle>{movieDetails.title}</MovieTitle>
+            <MovieTecnicalInfo>
+              <p>{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
+              <p>{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
+            </MovieTecnicalInfo>
             <MovieTecnicalInfo>
               <p>{`${movieDetails.runtime}m`}</p>
               <MovieNote>{`Nota: ${movieDetails.vote_average}`}</MovieNote>
