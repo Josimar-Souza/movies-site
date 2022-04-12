@@ -50,7 +50,6 @@ const MovieTitle = styled.h1`
 
 const MovieInfoContainer = styled.div`
   align-items: center;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   padding: 2rem;
