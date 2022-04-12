@@ -18,7 +18,7 @@ function MoviesDetails() {
   const {
     DetailsBackgorund,
     MovieDetailsContainer,
-    MovieDetailsImageContainer,
+    MovieDetailsImageTrailerContainer,
     MovieDetailsImage,
     MovieInfoContainer,
     MovieTitle,
@@ -71,9 +71,11 @@ function MoviesDetails() {
       <section>
         <DetailsBackgorund image={movieDetails.backdrop_path} />
         <MovieDetailsContainer>
-          <MovieDetailsImageContainer>
+          <MovieDetailsImageTrailerContainer>
             <MovieDetailsImage src={getImageURL(movieDetails.poster_path)} />
-          </MovieDetailsImageContainer>
+            <h3>Trailer</h3>
+            <Trailer trailerKey={getMovieTrailer()} />
+          </MovieDetailsImageTrailerContainer>
           <MovieInfoContainer>
             <MovieTitle>{movieDetails.title}</MovieTitle>
             <MovieTecnicalInfo>
@@ -104,7 +106,6 @@ function MoviesDetails() {
                 )
               }
             </ProductionCompaniesContainer>
-            <Trailer trailerKey={getMovieTrailer()} />
           </MovieInfoContainer>
         </MovieDetailsContainer>
       </section>
