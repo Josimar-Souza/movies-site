@@ -11,6 +11,7 @@ const moviesAPI = new MoviesAPI(baseURL);
 function MoviesDetails() {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
+  const [movieVideos, setMovieVideos] = useState([]);
 
   const {
     DetailsBackgorund,
@@ -30,8 +31,10 @@ function MoviesDetails() {
   useEffect(() => {
     const getMovieDetails = async () => {
       const details = await moviesAPI.getDetails(id);
-      moviesAPI.getVideos(id);
+      const videos = await moviesAPI.getVideos(id);
+
       setMovieDetails(details);
+      setMovieVideos(videos);
     };
 
     getMovieDetails();
