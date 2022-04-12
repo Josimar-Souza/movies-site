@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './HeroStyle';
+import styles from './MoviesHeroStyle';
 import Button from '../Button';
 import LeftSideFade from '../LeftSideFade';
 import BottomSideFade from '../BottomSideFade';

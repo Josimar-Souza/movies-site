@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import getImageURL from '../../utils/getImageURL';
 
-const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
-
-const image = (props) => `${baseImageURL}${props.image}`;
+const image = (props) => getImageURL(props.image);
 
 const MovieNote = styled.p`
   font-weight: 700;

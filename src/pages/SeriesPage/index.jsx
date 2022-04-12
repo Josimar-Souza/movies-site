@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../redux/actions/series/actions';
-import SeriesHero from '../components/SeriesHero';
-import ItemsSection from '../components/ItemsSection';
+import actions from '../../redux/actions/series/actions';
+import SeriesHero from '../../components/SeriesHero';
+import ItemsSection from '../../components/ItemsSection';
+import Header from '../../components/Header';
 
 function SeriesPage() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function SeriesPage() {
     if (series.popular.length > 0) {
       return (
         <section>
+          <Header />
           <SeriesHero serie={series.popular[randomIndex]} />
           <ItemsSection
             title="Séries com episódios hoje"

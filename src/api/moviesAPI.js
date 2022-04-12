@@ -30,6 +30,16 @@ class MoviesAPI {
     const { data: { results } } = await this.http.get(`/movie/upcoming${baseQueryString}`);
     return results;
   }
+
+  async getDetails(id) {
+    const { data } = await this.http.get(`/movie/${id}${baseQueryString}`);
+    return data;
+  }
+
+  async getVideos(id) {
+    const { data: { results } } = await this.http.get(`/movie/${id}/videos${baseQueryString}`);
+    return results;
+  }
 }
 
 export default MoviesAPI;
