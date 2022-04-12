@@ -42,8 +42,6 @@ function MoviesDetails() {
     getMovieDetails();
   }, []);
 
-  console.log(movieDetails);
-
   const currencyFormatter = (number) => {
     const formatter = Intl.NumberFormat('en-US', {
       style: 'currency',
