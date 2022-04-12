@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import getImageURL from '../../utils/getImageURL';
 
-const image = (props) => getImageURL(props.image);
+const getBackground = (props) => {
+  if (props.image == null) {
+    return 'background: #0f0f0f;';
+  }
+
+  return `background-image: url(${getImageURL(props.image)});`;
+};
 
 const ProductionCompaniesContainer = styled.section`
   align-items: center;
@@ -73,7 +79,7 @@ const MovieDetailsContainer = styled.div`
 `;
 
 const DetailsBackgorund = styled.div`
-  background-image: url(${image});
+  ${getBackground}
   background-size: cover;
   height: 100vh;
   position: fixed;
