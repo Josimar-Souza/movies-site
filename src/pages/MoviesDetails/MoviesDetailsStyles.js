@@ -3,6 +3,13 @@ import getImageURL from '../../utils/getImageURL';
 
 const image = (props) => getImageURL(props.image);
 
+const ProductionCompaniesContainer = styled.section`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+`;
+
 const MovieNote = styled.p`
   color: #2aff00;
 `;
@@ -85,6 +92,7 @@ const styles = {
   MovieGenre,
   MovieTecnicalInfo,
   MovieNote,
+  ProductionCompaniesContainer,
 };
 
 export default styles;

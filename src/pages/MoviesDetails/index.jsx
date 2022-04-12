@@ -24,6 +24,7 @@ function MoviesDetails() {
     MovieGenre,
     MovieTecnicalInfo,
     MovieNote,
+    ProductionCompaniesContainer,
   } = styles;
 
   useEffect(() => {
@@ -81,11 +82,13 @@ function MoviesDetails() {
               }
             </GenresContainer>
             <MovieOverview>{movieDetails.overview}</MovieOverview>
-            {
-              movieDetails.production_companies.map(
-                (companie) => <ProductionCompaniesCard key={companie.id} companie={companie} />,
-              )
-            }
+            <ProductionCompaniesContainer>
+              {
+                movieDetails.production_companies.map(
+                  (companie) => <ProductionCompaniesCard key={companie.id} companie={companie} />,
+                )
+              }
+            </ProductionCompaniesContainer>
           </MovieInfoContainer>
         </MovieDetailsContainer>
       </section>
