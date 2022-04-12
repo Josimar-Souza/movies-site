@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import styles from './MoviesDetailsStyles';
 import MoviesAPI from '../../api/moviesAPI';
 import getImageURL from '../../utils/getImageURL';
+import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
@@ -80,6 +81,11 @@ function MoviesDetails() {
               }
             </GenresContainer>
             <MovieOverview>{movieDetails.overview}</MovieOverview>
+            {
+              movieDetails.production_companies.map(
+                (companie) => <ProductionCompaniesCard key={companie.id} companie={companie} />,
+              )
+            }
           </MovieInfoContainer>
         </MovieDetailsContainer>
       </section>
