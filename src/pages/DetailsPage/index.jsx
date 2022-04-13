@@ -50,7 +50,7 @@ function DetailsPage({ type }) {
       setSerieVideos(videos);
     };
 
-    if (type === 'movie') {
+    if (type === 'movies') {
       getMovieDetails();
     } else {
       getSerieDetails();
@@ -89,8 +89,6 @@ function DetailsPage({ type }) {
     const dateSplited = date.split('-');
     return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
   };
-
-  console.log(movieDetails);
 
   if (type === 'movies' && Object.keys(movieDetails).length > 0) {
     return (
