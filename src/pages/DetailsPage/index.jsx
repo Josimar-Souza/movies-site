@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import styles from './DetailsPage';
 import MoviesAPI from '../../api/moviesAPI';
@@ -6,7 +7,7 @@ import MoviesAPI from '../../api/moviesAPI';
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
 
-function DetailsPage() {
+function DetailsPage({ type }) {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
 
@@ -20,14 +21,32 @@ function DetailsPage() {
       setMovieDetails(details);
     };
 
-    getMovieDetails();
+    if (type === 'movie') {
+      getMovieDetails();
+    }
   }, []);
 
   console.log(movieDetails);
 
+  if (type === 'movie') {
+    return (
+      <section>
+        <DetailsBackgorund image={movieDetails.backdrop_path} />
+      </section>
+    );
+  }
+
   return (
-    <DetailsBackgorund image={movieDetails.backdrop_path} />
+    <h1>Loading...</h1>
   );
 }
+
+DetailsPage.defaultProps = {
+  type: 'movie',
+};
+
+DetailsPage.propTypes = {
+  type: PropTypes.string,
+};
 
 export default DetailsPage;
