@@ -9,6 +9,17 @@ const getBackground = (props) => {
   return `background-image: url(${getImageURL(props.image)});`;
 };
 
+const SerieGenre = styled.p`
+  margin: 0 10px;
+`;
+
+const GenresContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  width: 90%;
+`;
+
 const SerieNote = styled.p`
   color: #2aff00;
 `;
@@ -73,6 +84,8 @@ const styles = {
   SerieTitle,
   SerieTecnicalInfo,
   SerieNote,
+  GenresContainer,
+  SerieGenre,
 };
 
 export default styles;

@@ -23,6 +23,8 @@ function SeriesDetails() {
     SerieTitle,
     SerieTecnicalInfo,
     SerieNote,
+    GenresContainer,
+    SerieGenre,
   } = styles;
 
   useEffect(() => {
@@ -77,6 +79,13 @@ function SeriesDetails() {
               <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
               <SerieNote>{`Nota: ${serieDetails.vote_average}`}</SerieNote>
             </SerieTecnicalInfo>
+            <GenresContainer>
+              {
+                serieDetails.genres.map(
+                  (genre) => <SerieGenre key={genre.id}>{genre.name}</SerieGenre>,
+                )
+              }
+            </GenresContainer>
           </SerieInfoContainer>
         </SeriesDetailsContainer>
       </section>
