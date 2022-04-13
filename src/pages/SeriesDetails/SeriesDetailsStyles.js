@@ -9,6 +9,26 @@ const getBackground = (props) => {
   return `background-image: url(${getImageURL(props.image)});`;
 };
 
+const SerieTecnicalInfo = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  width: 90%;
+`;
+
+const SerieTitle = styled.h1`
+  text-align: center;
+  margin-bottom: 15px;
+`;
+
+const SerieInfoContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50%;
+`;
+
 const SeriesDetailsImage = styled.img`
   margin-bottom: 2rem;
   width: 100%;
@@ -45,6 +65,9 @@ const styles = {
   SeriesDetailsContainer,
   SeriesDetailsImageTrailerContainer,
   SeriesDetailsImage,
+  SerieInfoContainer,
+  SerieTitle,
+  SerieTecnicalInfo,
 };
 
 export default styles;

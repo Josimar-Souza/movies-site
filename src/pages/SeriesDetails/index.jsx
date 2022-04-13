@@ -19,6 +19,9 @@ function SeriesDetails() {
     SeriesDetailsContainer,
     SeriesDetailsImageTrailerContainer,
     SeriesDetailsImage,
+    SerieInfoContainer,
+    SerieTitle,
+    SerieTecnicalInfo,
   } = styles;
 
   useEffect(() => {
@@ -47,17 +50,34 @@ function SeriesDetails() {
     return '';
   };
 
+  const dateFormatter = (date) => {
+    const dateSplited = date.split('-');
+    return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
+  };
+
+  if (Object.keys(serieDetails).length > 0) {
+    return (
+      <section>
+        <SeriesDetailsBackground image={serieDetails.backdrop_path} />
+        <SeriesDetailsContainer>
+          <SeriesDetailsImageTrailerContainer>
+            <SeriesDetailsImage src={getImageURL(serieDetails.poster_path)} />
+            <h3>Trailer</h3>
+            <Trailer trailerKey={getSerieTrailer()} />
+          </SeriesDetailsImageTrailerContainer>
+          <SerieInfoContainer>
+            <SerieTitle>{serieDetails.name}</SerieTitle>
+            <SerieTecnicalInfo>
+              <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
+            </SerieTecnicalInfo>
+          </SerieInfoContainer>
+        </SeriesDetailsContainer>
+      </section>
+    );
+  }
+
   return (
-    <section>
-      <SeriesDetailsBackground image={serieDetails.backdrop_path} />
-      <SeriesDetailsContainer>
-        <SeriesDetailsImageTrailerContainer>
-          <SeriesDetailsImage src={getImageURL(serieDetails.poster_path)} />
-          <h3>Trailer</h3>
-          <Trailer trailerKey={getSerieTrailer()} />
-        </SeriesDetailsImageTrailerContainer>
-      </SeriesDetailsContainer>
-    </section>
+    <h1>Loading...</h1>
   );
 }
 
