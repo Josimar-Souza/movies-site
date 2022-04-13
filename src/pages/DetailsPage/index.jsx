@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import styles from './DetailsPage';
 import MoviesAPI from '../../api/moviesAPI';
+import getImageURL from '../../utils/getImageURL';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
@@ -13,6 +14,9 @@ function DetailsPage({ type }) {
 
   const {
     DetailsBackgorund,
+    DetailsContainer,
+    DetailsImageTrailerContainer,
+    DetailsImage,
   } = styles;
 
   useEffect(() => {
@@ -28,10 +32,15 @@ function DetailsPage({ type }) {
 
   console.log(movieDetails);
 
-  if (type === 'movie') {
+  if (type === 'movie' && Object.keys(movieDetails).length > 0) {
     return (
       <section>
         <DetailsBackgorund image={movieDetails.backdrop_path} />
+        <DetailsContainer>
+          <DetailsImageTrailerContainer>
+            <DetailsImage src={getImageURL(movieDetails.poster_path)} />
+          </DetailsImageTrailerContainer>
+        </DetailsContainer>
       </section>
     );
   }
