@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import styles from './DetailsPage';
 import MoviesAPI from '../../api/moviesAPI';
+import SeriesAPI from '../../api/seriesAPI';
 import getImageURL from '../../utils/getImageURL';
 import getTrailer from '../../utils/getTrailer';
 import Trailer from '../../components/Trailer';
@@ -10,11 +11,14 @@ import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
+const seriesAPI = new SeriesAPI(baseURL);
 
 function DetailsPage({ type }) {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
   const [movieVideos, setMovieVideos] = useState([]);
+  const [serieDetails, setSerieDetails] = useState({});
+  const [serieVideos, setSerieVideos] = useState([]);
 
   const {
     DetailsBackgorund,
@@ -39,16 +43,29 @@ function DetailsPage({ type }) {
       setMovieVideos(videos);
     };
 
+    const getSerieDetails = async () => {
+      const details = await seriesAPI.getDetails(id);
+      const videos = await seriesAPI.getVideos(id);
+      setSerieDetails(details);
+      setSerieVideos(videos);
+    };
+
     if (type === 'movie') {
       getMovieDetails();
+    } else {
+      getSerieDetails();
     }
   }, []);
 
   const getYoutubeTrailer = () => {
     let trailer = {};
-    if (type === 'movie') {
+    if (type === 'movies') {
       if (movieVideos.length > 0) {
         trailer = getTrailer(movieVideos);
+      }
+    } else if (type === 'series') {
+      if (serieVideos.length > 0) {
+        trailer = getTrailer(serieVideos);
       }
     }
 
@@ -75,7 +92,7 @@ function DetailsPage({ type }) {
 
   console.log(movieDetails);
 
-  if (type === 'movie' && Object.keys(movieDetails).length > 0) {
+  if (type === 'movies' && Object.keys(movieDetails).length > 0) {
     return (
       <section>
         <DetailsBackgorund image={movieDetails.backdrop_path} />
@@ -120,13 +137,40 @@ function DetailsPage({ type }) {
     );
   }
 
+  if (type === 'series' && Object.keys(serieDetails).length > 0) {
+    return (
+      <section>
+        <DetailsBackgorund image={serieDetails.backdrop_path} />
+        <DetailsContainer>
+          <DetailsImageTrailerContainer>
+            <DetailsImage src={getImageURL(serieDetails.poster_path)} />
+            <h3>Trailer</h3>
+            <Trailer trailerKey={getYoutubeTrailer()} />
+          </DetailsImageTrailerContainer>
+          <InfoContainer>
+            <Title>{serieDetails.name}</Title>
+            <TecnicalInfo>
+              <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
+              <p>{`Status: ${serieDetails.status}`}</p>
+            </TecnicalInfo>
+            <TecnicalInfo>
+              <p>{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
+              <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
+              <Note>{`Nota: ${serieDetails.vote_average}`}</Note>
+            </TecnicalInfo>
+          </InfoContainer>
+        </DetailsContainer>
+      </section>
+    );
+  }
+
   return (
     <h1>Loading...</h1>
   );
 }
 
 DetailsPage.defaultProps = {
-  type: 'movie',
+  type: 'movies',
 };
 
 DetailsPage.propTypes = {
