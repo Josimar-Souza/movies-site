@@ -9,6 +9,18 @@ const getBackground = (props) => {
   return `background-image: url(${getImageURL(props.image)});`;
 };
 
+const ProductionCompaniesContainer = styled.section`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+`;
+
+const SerieOverview = styled.p`
+  margin: 15px 0;
+  text-align: justify;
+`;
+
 const SerieGenre = styled.p`
   margin: 0 10px;
 `;
@@ -86,6 +98,8 @@ const styles = {
   SerieNote,
   GenresContainer,
   SerieGenre,
+  SerieOverview,
+  ProductionCompaniesContainer,
 };
 
 export default styles;

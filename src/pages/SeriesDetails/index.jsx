@@ -5,6 +5,7 @@ import SeriesAPI from '../../api/seriesAPI';
 import getImageURL from '../../utils/getImageURL';
 import getTrailer from '../../utils/getTrailer';
 import Trailer from '../../components/Trailer';
+import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const seriesAPI = new SeriesAPI(baseURL);
@@ -25,6 +26,8 @@ function SeriesDetails() {
     SerieNote,
     GenresContainer,
     SerieGenre,
+    SerieOverview,
+    ProductionCompaniesContainer,
   } = styles;
 
   useEffect(() => {
@@ -86,6 +89,15 @@ function SeriesDetails() {
                 )
               }
             </GenresContainer>
+            <SerieOverview>{serieDetails.overview}</SerieOverview>
+            <ProductionCompaniesContainer>
+              <h2>Empresas de produção</h2>
+              {
+                serieDetails.production_companies.map(
+                  (company) => <ProductionCompaniesCard key={company.id} companie={company} />,
+                )
+              }
+            </ProductionCompaniesContainer>
           </SerieInfoContainer>
         </SeriesDetailsContainer>
       </section>
