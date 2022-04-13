@@ -41,8 +41,6 @@ function SeriesDetails() {
     getSerieDetails();
   }, []);
 
-  console.log(serieDetails);
-
   const getSerieTrailer = () => {
     let trailer = {};
     if (serieVideos.length > 0) {
