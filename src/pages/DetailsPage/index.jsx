@@ -6,6 +6,7 @@ import MoviesAPI from '../../api/moviesAPI';
 import getImageURL from '../../utils/getImageURL';
 import getTrailer from '../../utils/getTrailer';
 import Trailer from '../../components/Trailer';
+import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
@@ -27,6 +28,7 @@ function DetailsPage({ type }) {
     GenresContainer,
     Genre,
     Overview,
+    ProductionCompaniesContainer,
   } = styles;
 
   useEffect(() => {
@@ -105,6 +107,13 @@ function DetailsPage({ type }) {
               }
             </GenresContainer>
             <Overview>{movieDetails.overview}</Overview>
+            <ProductionCompaniesContainer>
+              {
+                movieDetails.production_companies.map(
+                  (company) => <ProductionCompaniesCard key={company.id} company={company} />,
+                )
+              }
+            </ProductionCompaniesContainer>
           </InfoContainer>
         </DetailsContainer>
       </section>

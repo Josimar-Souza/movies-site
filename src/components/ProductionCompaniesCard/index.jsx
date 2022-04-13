@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import styles from './ProductionCompaniesCardStyles';
 import getImageURL from '../../utils/getImageURL';
 
-function ProductionCompaniesCard({ companie }) {
+function ProductionCompaniesCard({ company }) {
   const { CompanieCard, CompanieImage } = styles;
   return (
     <CompanieCard>
-      <CompanieImage src={getImageURL(companie.logo_path)} />
-      <h3>{companie.name}</h3>
+      <CompanieImage src={getImageURL(company.logo_path)} />
+      <h3>{company.name}</h3>
     </CompanieCard>
   );
 }
 
 ProductionCompaniesCard.propTypes = {
-  companie: PropTypes.shape({
+  company: PropTypes.shape({
     logo_path: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
