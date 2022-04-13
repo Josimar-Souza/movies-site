@@ -23,6 +23,7 @@ function DetailsPage({ type }) {
     InfoContainer,
     Title,
     TecnicalInfo,
+    Note,
   } = styles;
 
   useEffect(() => {
@@ -62,6 +63,11 @@ function DetailsPage({ type }) {
     return formatter.format(number);
   };
 
+  const dateFormatter = (date) => {
+    const dateSplited = date.split('-');
+    return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;
+  };
+
   console.log(movieDetails);
 
   if (type === 'movie' && Object.keys(movieDetails).length > 0) {
@@ -79,6 +85,14 @@ function DetailsPage({ type }) {
             <TecnicalInfo>
               <p>{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
               <p>{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
+            </TecnicalInfo>
+            <TecnicalInfo>
+              <p>{`${movieDetails.runtime}m`}</p>
+              <Note>{`Nota: ${movieDetails.vote_average}`}</Note>
+            </TecnicalInfo>
+            <TecnicalInfo>
+              <p>{dateFormatter(movieDetails.release_date)}</p>
+              <p>{`Status: ${movieDetails.status}`}</p>
             </TecnicalInfo>
           </InfoContainer>
         </DetailsContainer>
