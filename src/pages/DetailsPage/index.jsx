@@ -158,6 +158,14 @@ function DetailsPage({ type }) {
               <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
               <Note>{`Nota: ${serieDetails.vote_average}`}</Note>
             </TecnicalInfo>
+            <GenresContainer>
+              {
+                serieDetails.genres.map(
+                  (genre) => <Genre key={genre.id}>{genre.name}</Genre>,
+                )
+              }
+            </GenresContainer>
+            <Overview>{serieDetails.overview}</Overview>
           </InfoContainer>
         </DetailsContainer>
       </section>
