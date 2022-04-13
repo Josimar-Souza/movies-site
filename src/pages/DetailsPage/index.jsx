@@ -20,6 +20,9 @@ function DetailsPage({ type }) {
     DetailsContainer,
     DetailsImageTrailerContainer,
     DetailsImage,
+    InfoContainer,
+    Title,
+    TecnicalInfo,
   } = styles;
 
   useEffect(() => {
@@ -50,6 +53,15 @@ function DetailsPage({ type }) {
     return '';
   };
 
+  const currencyFormatter = (number) => {
+    const formatter = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+
+    return formatter.format(number);
+  };
+
   console.log(movieDetails);
 
   if (type === 'movie' && Object.keys(movieDetails).length > 0) {
@@ -62,6 +74,13 @@ function DetailsPage({ type }) {
             <h3>Trailer</h3>
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
+          <InfoContainer>
+            <Title>{movieDetails.title}</Title>
+            <TecnicalInfo>
+              <p>{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
+              <p>{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
+            </TecnicalInfo>
+          </InfoContainer>
         </DetailsContainer>
       </section>
     );
