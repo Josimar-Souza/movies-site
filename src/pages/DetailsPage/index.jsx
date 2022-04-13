@@ -125,6 +125,7 @@ function DetailsPage({ type }) {
             </GenresContainer>
             <Overview>{movieDetails.overview}</Overview>
             <ProductionCompaniesContainer>
+              <h2>Empresas de produção</h2>
               {
                 movieDetails.production_companies.map(
                   (company) => <ProductionCompaniesCard key={company.id} company={company} />,
@@ -166,6 +167,14 @@ function DetailsPage({ type }) {
               }
             </GenresContainer>
             <Overview>{serieDetails.overview}</Overview>
+            <ProductionCompaniesContainer>
+              <h2>Empresas de produção</h2>
+              {
+                serieDetails.production_companies.map(
+                  (company) => <ProductionCompaniesCard key={company.id} company={company} />,
+                )
+              }
+            </ProductionCompaniesContainer>
           </InfoContainer>
         </DetailsContainer>
       </section>
