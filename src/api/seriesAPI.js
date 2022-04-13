@@ -35,6 +35,11 @@ class SeriesAPI {
     const { data } = await this.http.get(`/tv/${id}${baseQueryString}`);
     return data;
   }
+
+  async getVideos(id) {
+    const { data: { results } } = await this.http.get(`/tv/${id}/videos${baseQueryString}`);
+    return results;
+  }
 }
 
 export default SeriesAPI;

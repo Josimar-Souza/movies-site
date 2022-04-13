@@ -10,6 +10,7 @@ const seriesAPI = new SeriesAPI(baseURL);
 function SeriesDetails() {
   const { id } = useParams();
   const [serieDetails, setSerieDetails] = useState({});
+  const [serieVideos, setSerieVideos] = useState([]);
 
   const {
     SeriesDetailsBackground,
@@ -21,7 +22,9 @@ function SeriesDetails() {
   useEffect(() => {
     const getSerieDetails = async () => {
       const details = await seriesAPI.getDetails(id);
+      const videos = await seriesAPI.getVideos(id);
       setSerieDetails(details);
+      setSerieVideos(videos);
     };
 
     getSerieDetails();
