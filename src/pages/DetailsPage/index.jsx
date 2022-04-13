@@ -24,6 +24,9 @@ function DetailsPage({ type }) {
     Title,
     TecnicalInfo,
     Note,
+    GenresContainer,
+    Genre,
+    Overview,
   } = styles;
 
   useEffect(() => {
@@ -94,6 +97,14 @@ function DetailsPage({ type }) {
               <p>{dateFormatter(movieDetails.release_date)}</p>
               <p>{`Status: ${movieDetails.status}`}</p>
             </TecnicalInfo>
+            <GenresContainer>
+              {
+                movieDetails.genres.map(
+                  (genre) => <Genre key={genre.id}>{genre.name}</Genre>,
+                )
+              }
+            </GenresContainer>
+            <Overview>{movieDetails.overview}</Overview>
           </InfoContainer>
         </DetailsContainer>
       </section>
