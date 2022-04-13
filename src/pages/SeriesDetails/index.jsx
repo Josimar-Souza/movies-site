@@ -22,6 +22,7 @@ function SeriesDetails() {
     SerieInfoContainer,
     SerieTitle,
     SerieTecnicalInfo,
+    SerieNote,
   } = styles;
 
   useEffect(() => {
@@ -69,6 +70,12 @@ function SeriesDetails() {
             <SerieTitle>{serieDetails.name}</SerieTitle>
             <SerieTecnicalInfo>
               <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
+              <p>{`Status: ${serieDetails.status}`}</p>
+            </SerieTecnicalInfo>
+            <SerieTecnicalInfo>
+              <p>{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
+              <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
+              <SerieNote>{`Nota: ${serieDetails.vote_average}`}</SerieNote>
             </SerieTecnicalInfo>
           </SerieInfoContainer>
         </SeriesDetailsContainer>

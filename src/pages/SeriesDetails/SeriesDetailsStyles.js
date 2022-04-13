@@ -9,6 +9,10 @@ const getBackground = (props) => {
   return `background-image: url(${getImageURL(props.image)});`;
 };
 
+const SerieNote = styled.p`
+  color: #2aff00;
+`;
+
 const SerieTecnicalInfo = styled.div`
   display: flex;
   justify-content: space-around;
@@ -68,6 +72,7 @@ const styles = {
   SerieInfoContainer,
   SerieTitle,
   SerieTecnicalInfo,
+  SerieNote,
 };
 
 export default styles;
