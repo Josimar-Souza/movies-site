@@ -4,7 +4,7 @@ import LoadingStyle from './LoadingStyles';
 function Loading() {
   return (
     <LoadingStyle>
-      <h1>Loading...</h1>
+      <h1>LOADING...</h1>
     </LoadingStyle>
   );
 }
