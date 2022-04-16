@@ -8,6 +8,7 @@ import getImageURL from '../../utils/getImageURL';
 import getTrailer from '../../utils/getTrailer';
 import Trailer from '../../components/Trailer';
 import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
+import Loading from '../../components/Loading';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const moviesAPI = new MoviesAPI(baseURL);
@@ -180,7 +181,7 @@ function DetailsPage({ type }) {
   }
 
   return (
-    <h1>Loading...</h1>
+    <Loading />
   );
 }
 
