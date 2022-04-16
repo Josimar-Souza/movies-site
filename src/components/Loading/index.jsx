@@ -3,7 +3,9 @@ import LoadingStyle from './LoadingStyles';
 
 function Loading() {
   return (
-    <LoadingStyle />
+    <LoadingStyle>
+      <h1>Loading...</h1>
+    </LoadingStyle>
   );
 }
 
