@@ -4,6 +4,7 @@ import actions from '../../redux/actions/series/actions';
 import SeriesHero from '../../components/SeriesHero';
 import ItemsSection from '../../components/ItemsSection';
 import Header from '../../components/Header';
+import Loading from '../../components/Loading';
 
 function SeriesPage() {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ function SeriesPage() {
     }
 
     return (
-      <h1>Loading...</h1>
+      <Loading />
     );
   };
 
