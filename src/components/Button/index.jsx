@@ -7,12 +7,14 @@ function Button(props) {
     children,
     onClick,
     width,
+    fontSize,
     name,
   } = props;
-
+  console.log(fontSize);
   return (
     <ButtonStyle
       width={width}
+      fontSize={fontSize}
       onClick={onClick}
       name={name}
     >
@@ -24,6 +26,7 @@ function Button(props) {
 Button.defaultProps = {
   onClick: () => {},
   width: '50%',
+  fontSize: '20px',
   name: '',
 };
 
@@ -31,6 +34,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   width: PropTypes.string,
+  fontSize: PropTypes.string,
   name: PropTypes.string,
 };
 

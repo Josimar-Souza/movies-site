@@ -20,6 +20,7 @@ function Header() {
       <HeaderStyle>
         <Button
           width="15%"
+          fontSize="16px"
           onClick={onButtonClick}
           name="movies"
         >
@@ -27,6 +28,7 @@ function Header() {
         </Button>
         <Button
           width="15%"
+          fontSize="16px"
           onClick={onButtonClick}
           name="series"
         >
