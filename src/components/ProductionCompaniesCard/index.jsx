@@ -7,7 +7,7 @@ function ProductionCompaniesCard({ company }) {
   const { CompanieCard, CompanieImage } = styles;
   return (
     <CompanieCard>
-      <CompanieImage src={getImageURL(company.logo_path)} />
+      <CompanieImage src={getImageURL(company.logo_path)} alt={`Imagem de ${company.name}`} />
       <h3>{company.name}</h3>
     </CompanieCard>
   );
@@ -15,7 +15,7 @@ function ProductionCompaniesCard({ company }) {
 
 ProductionCompaniesCard.propTypes = {
   company: PropTypes.shape({
-    logo_path: PropTypes.string.isRequired,
+    logo_path: PropTypes.string,
     name: PropTypes.string.isRequired,
   }).isRequired,
 };
