@@ -15,7 +15,7 @@ const HeaderStyle = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 15px;
-  width: 60%;
+  width: 50%;
 `;
 
 const styles = {
