@@ -28,7 +28,6 @@ ItemCard.defaultProps = {
 ItemCard.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    title: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
   }).isRequired,
   type: PropTypes.string,
