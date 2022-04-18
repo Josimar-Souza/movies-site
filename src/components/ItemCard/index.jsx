@@ -14,9 +14,17 @@ function ItemCard({ item, type }) {
     );
   };
 
+  const getName = () => {
+    if (type === 'series') {
+      return item.name;
+    }
+
+    return item.title;
+  };
+
   return (
     <ItemCardStyle onClick={onCardClick}>
-      <ItemImg src={getImageURL(item.poster_path)} />
+      <ItemImg src={getImageURL(item.poster_path)} alt={`Imagem de ${getName()}`} />
     </ItemCardStyle>
   );
 }
@@ -27,6 +35,8 @@ ItemCard.defaultProps = {
 
 ItemCard.propTypes = {
   item: PropTypes.shape({
+    name: PropTypes.string,
+    title: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     poster_path: PropTypes.string.isRequired,
   }).isRequired,
