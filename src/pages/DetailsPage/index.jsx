@@ -97,7 +97,7 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={movieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(movieDetails.poster_path)} />
+            <DetailsImage src={getImageURL(movieDetails.poster_path)} alt={`Imagem de ${movieDetails.title}`} />
             <h3>Trailer</h3>
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
@@ -143,7 +143,7 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={serieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(serieDetails.poster_path)} />
+            <DetailsImage src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
             <h3>Trailer</h3>
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
