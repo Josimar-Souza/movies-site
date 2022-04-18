@@ -7,7 +7,7 @@ function ProductionCompaniesCard({ company }) {
   const { CompanieCard, CompanieImage } = styles;
   return (
     <CompanieCard>
-      <CompanieImage src={getImageURL(company.logo_path)} />
+      <CompanieImage src={getImageURL(company.logo_path)} alt={`Imagem de ${company.name}`} />
       <h3>{company.name}</h3>
     </CompanieCard>
   );
