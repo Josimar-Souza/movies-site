@@ -54,7 +54,7 @@ SeriesHero.propTypes = {
     backdrop_path: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     first_air_date: PropTypes.string.isRequired,
-    vote_average: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
   }).isRequired,
 };
 
