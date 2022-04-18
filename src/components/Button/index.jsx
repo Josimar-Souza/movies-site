@@ -10,7 +10,7 @@ function Button(props) {
     fontSize,
     name,
   } = props;
-  console.log(fontSize);
+
   return (
     <ButtonStyle
       width={width}
