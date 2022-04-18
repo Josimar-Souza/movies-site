@@ -15,7 +15,7 @@ function ProductionCompaniesCard({ company }) {
 
 ProductionCompaniesCard.propTypes = {
   company: PropTypes.shape({
-    logo_path: PropTypes.string.isRequired,
+    logo_path: PropTypes.string,
     name: PropTypes.string.isRequired,
   }).isRequired,
 };
