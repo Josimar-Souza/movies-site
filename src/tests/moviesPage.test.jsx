@@ -7,16 +7,16 @@ import moviesMockData from './mocks/data/moviesMockData';
 import { moviesAPI } from '../redux/actions/movies/actions';
 
 describe('Testes da página de filmes', () => {
-  describe('Verifica a existencia dos elementos do hero', () => {
-    beforeEach(() => {
-      jest.spyOn(moviesAPI, 'getNowPlaying').mockResolvedValue(moviesMockData.nowPlaying);
-      renderWithRouterAndRedux(<MoviesPage />);
-    });
+  beforeEach(() => {
+    jest.spyOn(moviesAPI, 'getNowPlaying').mockResolvedValue(moviesMockData.nowPlaying);
+    renderWithRouterAndRedux(<MoviesPage />);
+  });
 
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
+  describe('Verifica a existência dos elementos do hero', () => {
     it('O titulo do filme', async () => {
       const heroTitle = await screen.findByTestId('hero-movie-title');
       expect(heroTitle).toBeDefined();
@@ -32,9 +32,21 @@ describe('Testes da página de filmes', () => {
       expect(heroNote).toBeDefined();
     });
 
-    it('Um botão para ver detalhes', async () => {
+    it('Um botão escrito "Ver detalhes"', async () => {
       const heroDetailsButton = await screen.findByRole('button', { name: 'Ver detalhes' });
       expect(heroDetailsButton).toBeDefined();
+    });
+  });
+
+  describe('Verifica a existência dos elementos do header', () => {
+    it('Um botão escrito "Filmes"', async () => {
+      const moviesButton = await screen.findByRole('button', { name: 'Filmes' });
+      expect(moviesButton).toBeDefined();
+    });
+
+    it('Um botão escrito "Séries"', async () => {
+      const seriesButton = await screen.findByRole('button', { name: 'Séries' });
+      expect(seriesButton).toBeDefined();
     });
   });
 });
