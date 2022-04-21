@@ -9,6 +9,7 @@ import { moviesAPI } from '../redux/actions/movies/actions';
 describe('Testes da página de filmes', () => {
   beforeEach(() => {
     jest.spyOn(moviesAPI, 'getNowPlaying').mockResolvedValue(moviesMockData.nowPlaying);
+    jest.spyOn(moviesAPI, 'getPopular').mockResolvedValue(moviesMockData.popular);
     renderWithRouterAndRedux(<MoviesPage />);
   });
 
@@ -59,6 +60,18 @@ describe('Testes da página de filmes', () => {
     it('Todos os cards dos filmes', async () => {
       const sectionMovies = await screen.findAllByTestId('item-Filmes no cinema');
       expect(sectionMovies.length).toBe(moviesMockData.nowPlaying.length);
+    });
+  });
+
+  describe('Verifica a existência dos elementos da seção "Filmes populares"', () => {
+    it('Um título escrito "Filmes populares"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Filmes populares' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todos os cards dos filmes', async () => {
+      const sectionMovies = await screen.findAllByTestId('item-Filmes populares');
+      expect(sectionMovies.length).toBe(moviesMockData.popular.length);
     });
   });
 });
