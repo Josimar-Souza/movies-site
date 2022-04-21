@@ -26,5 +26,15 @@ describe('Testes da página de filmes', () => {
       const heroYear = await screen.findByTestId('hero-movie-year');
       expect(heroYear).toBeDefined();
     });
+
+    it('A nota do filme', async () => {
+      const heroNote = await screen.findByTestId('hero-movie-note');
+      expect(heroNote).toBeDefined();
+    });
+
+    it('Um botão para ver detalhes', async () => {
+      const heroDetailsButton = await screen.findByRole('button', { name: 'Ver detalhes' });
+      expect(heroDetailsButton).toBeDefined();
+    });
   });
 });

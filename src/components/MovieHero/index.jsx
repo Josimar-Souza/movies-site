@@ -34,7 +34,7 @@ function MovieHero({ Movie }) {
         <h1 data-testid="hero-movie-title">{Movie.title}</h1>
         <InfoSection>
           <p data-testid="hero-movie-year">{`${formatDate(Movie.release_date)}`}</p>
-          <MovieNote>{`Nota: ${Movie.vote_average}`}</MovieNote>
+          <MovieNote data-testid="hero-movie-note">{`Nota: ${Movie.vote_average}`}</MovieNote>
         </InfoSection>
         <Button
           onClick={onDetailsClick}
