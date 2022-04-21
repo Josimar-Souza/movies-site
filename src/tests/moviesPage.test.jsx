@@ -11,6 +11,7 @@ describe('Testes da página de filmes', () => {
     jest.spyOn(moviesAPI, 'getNowPlaying').mockResolvedValue(moviesMockData.nowPlaying);
     jest.spyOn(moviesAPI, 'getPopular').mockResolvedValue(moviesMockData.popular);
     jest.spyOn(moviesAPI, 'getTopRated').mockResolvedValue(moviesMockData.topRated);
+    jest.spyOn(moviesAPI, 'getUpcoming').mockResolvedValue(moviesMockData.upcoming);
     renderWithRouterAndRedux(<MoviesPage />);
   });
 
@@ -85,6 +86,18 @@ describe('Testes da página de filmes', () => {
     it('Todos os cards dos filmes dessa seção', async () => {
       const sectionMovies = await screen.findAllByTestId('item-Filmes mais votados');
       expect(sectionMovies.length).toBe(moviesMockData.topRated.length);
+    });
+  });
+
+  describe('Verifica a existência dos elementos da seção "Filmes que sairão em breve"', () => {
+    it('Um título escrito "Filmes que sairão em breve"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Filmes que sairão em breve' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todos os cards dos filmes dessa seção', async () => {
+      const sectionMovies = await screen.findAllByTestId('item-Filmes que sairão em breve');
+      expect(sectionMovies.length).toBe(moviesMockData.upcoming.length);
     });
   });
 });
