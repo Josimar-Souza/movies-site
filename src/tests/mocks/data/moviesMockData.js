@@ -8,8 +8,8 @@ const moviesMockData = {
       revenue: 560000000,
       overview: 'overview do filme 1',
       release_date: '2019-04-17',
-      backdrop_path: 'SPaMwmdmoawd54bYdblwn87w.jpg',
-      poster_path: 'KjwjpJPasdDA290DnFLk2.jpg',
+      backdrop_path: '/SPaMwmdmoawd54bYdblwn87w.jpg',
+      poster_path: '/KjwjpJPasdDA290DnFLk2.jpg',
     },
     {
       title: 'Filme 2',
@@ -19,8 +19,8 @@ const moviesMockData = {
       revenue: 760000000,
       overview: 'overview do filme 2',
       release_date: '2020-05-15',
-      backdrop_path: 'SPaMwmdmoawd54aswlk455lwn87w.jpg',
-      poster_path: 'Kjwaglk2k125alfhge90DnFLk2.jpg',
+      backdrop_path: '/SPaMwmdmoawd54aswlk455lwn87w.jpg',
+      poster_path: '/Kjwaglk2k125alfhge90DnFLk2.jpg',
     },
     {
       title: 'Filme 3',
@@ -30,8 +30,8 @@ const moviesMockData = {
       revenue: 430000000,
       overview: 'overview do filme 3',
       release_date: '2021-08-28',
-      backdrop_path: 'SPaMwmdmoawd54aswgkjwo298gnan87w.jpg',
-      poster_path: 'Kjwaglk2k12gkjkjof48ak2n4DnFLk2.jpg',
+      backdrop_path: '/SPaMwmdmoawd54aswgkjwo298gnan87w.jpg',
+      poster_path: '/Kjwaglk2k12gkjkjof48ak2n4DnFLk2.jpg',
     },
     {
       title: 'Filme 4',
@@ -41,8 +41,8 @@ const moviesMockData = {
       revenue: 1730000000,
       overview: 'overview do filme 4',
       release_date: '2021-10-30',
-      backdrop_path: 'SPaMwmdmoawd54aslkfka98798gnan87w.jpg',
-      poster_path: 'Kjwaglk2k12gkjadqwer5448ak2n4DnFLk2.jpg',
+      backdrop_path: '/SPaMwmdmoawd54aslkfka98798gnan87w.jpg',
+      poster_path: '/Kjwaglk2k12gkjadqwer5448ak2n4DnFLk2.jpg',
     },
   ],
 };

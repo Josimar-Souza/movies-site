@@ -17,7 +17,7 @@ describe('Testes da página de filmes', () => {
   });
 
   describe('Verifica a existência dos elementos do hero', () => {
-    it('O titulo do filme', async () => {
+    it('O título do filme', async () => {
       const heroTitle = await screen.findByTestId('hero-movie-title');
       expect(heroTitle).toBeDefined();
     });
@@ -47,6 +47,18 @@ describe('Testes da página de filmes', () => {
     it('Um botão escrito "Séries"', async () => {
       const seriesButton = await screen.findByRole('button', { name: 'Séries' });
       expect(seriesButton).toBeDefined();
+    });
+  });
+
+  describe('Verifica a existência dos elementos da seção "Filmes no cinema"', () => {
+    it('Um título escrito "Filmes no cinema"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Filmes no cinema' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todos os cards dos filmes', async () => {
+      const sectionMovies = await screen.findAllByTestId('item-Filmes no cinema');
+      expect(sectionMovies.length).toBe(moviesMockData.nowPlaying.length);
     });
   });
 });

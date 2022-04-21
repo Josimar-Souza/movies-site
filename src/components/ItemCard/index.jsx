@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ItemCardStyle';
 import getImageURL from '../../utils/getImageURL';
 
-function ItemCard({ item, type }) {
+function ItemCard({ item, type, testId }) {
   const navigate = useNavigate();
   const { ItemCardStyle, ItemImg } = styles;
 
@@ -23,7 +23,7 @@ function ItemCard({ item, type }) {
   };
 
   return (
-    <ItemCardStyle onClick={onCardClick}>
+    <ItemCardStyle data-testid={testId} onClick={onCardClick}>
       <ItemImg src={getImageURL(item.poster_path)} alt={`Imagem de ${getName()}`} />
     </ItemCardStyle>
   );
@@ -31,6 +31,7 @@ function ItemCard({ item, type }) {
 
 ItemCard.defaultProps = {
   type: 'movies',
+  testId: '',
 };
 
 ItemCard.propTypes = {
@@ -41,6 +42,7 @@ ItemCard.propTypes = {
     poster_path: PropTypes.string.isRequired,
   }).isRequired,
   type: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 export default ItemCard;
