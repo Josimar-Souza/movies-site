@@ -10,6 +10,7 @@ describe('Testes da página de filmes', () => {
   beforeEach(() => {
     jest.spyOn(moviesAPI, 'getNowPlaying').mockResolvedValue(moviesMockData.nowPlaying);
     jest.spyOn(moviesAPI, 'getPopular').mockResolvedValue(moviesMockData.popular);
+    jest.spyOn(moviesAPI, 'getTopRated').mockResolvedValue(moviesMockData.topRated);
     renderWithRouterAndRedux(<MoviesPage />);
   });
 
@@ -57,7 +58,7 @@ describe('Testes da página de filmes', () => {
       expect(sectionTitle).toBeDefined();
     });
 
-    it('Todos os cards dos filmes', async () => {
+    it('Todos os cards dos filmes dessa seção', async () => {
       const sectionMovies = await screen.findAllByTestId('item-Filmes no cinema');
       expect(sectionMovies.length).toBe(moviesMockData.nowPlaying.length);
     });
@@ -69,9 +70,21 @@ describe('Testes da página de filmes', () => {
       expect(sectionTitle).toBeDefined();
     });
 
-    it('Todos os cards dos filmes', async () => {
+    it('Todos os cards dos filmes dessa seção', async () => {
       const sectionMovies = await screen.findAllByTestId('item-Filmes populares');
       expect(sectionMovies.length).toBe(moviesMockData.popular.length);
+    });
+  });
+
+  describe('Verifica a existência dos elementos da seção "Filmes mais votados"', () => {
+    it('Um título escrito "Filmes mais votados"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Filmes mais votados' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todos os cards dos filmes dessa seção', async () => {
+      const sectionMovies = await screen.findAllByTestId('item-Filmes mais votados');
+      expect(sectionMovies.length).toBe(moviesMockData.topRated.length);
     });
   });
 });
