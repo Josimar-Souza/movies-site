@@ -17,7 +17,7 @@ function MoviesPage() {
     dispatch(actions.getTopRated());
     dispatch(actions.getUpcoming());
   }, []);
-
+  console.log(movies);
   if (movies.nowPlaying.length > 0) {
     return (
       <section>

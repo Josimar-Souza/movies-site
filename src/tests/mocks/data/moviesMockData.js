@@ -1,0 +1,50 @@
+const moviesMockData = {
+  nowPlaying: [
+    {
+      title: 'Filme 1',
+      id: '124578',
+      vote_average: 8.1,
+      budget: 80000000,
+      revenue: 560000000,
+      overview: 'overview do filme 1',
+      release_date: '2019-04-17',
+      backdrop_path: 'SPaMwmdmoawd54bYdblwn87w.jpg',
+      poster_path: 'KjwjpJPasdDA290DnFLk2.jpg',
+    },
+    {
+      title: 'Filme 2',
+      id: '121254',
+      vote_average: 7.5,
+      budget: 180000000,
+      revenue: 760000000,
+      overview: 'overview do filme 2',
+      release_date: '2020-05-15',
+      backdrop_path: 'SPaMwmdmoawd54aswlk455lwn87w.jpg',
+      poster_path: 'Kjwaglk2k125alfhge90DnFLk2.jpg',
+    },
+    {
+      title: 'Filme 3',
+      id: '217254',
+      vote_average: 9.1,
+      budget: 70000000,
+      revenue: 430000000,
+      overview: 'overview do filme 3',
+      release_date: '2021-08-28',
+      backdrop_path: 'SPaMwmdmoawd54aswgkjwo298gnan87w.jpg',
+      poster_path: 'Kjwaglk2k12gkjkjof48ak2n4DnFLk2.jpg',
+    },
+    {
+      title: 'Filme 4',
+      id: '136414',
+      vote_average: 9.1,
+      budget: 210000000,
+      revenue: 1730000000,
+      overview: 'overview do filme 4',
+      release_date: '2021-10-30',
+      backdrop_path: 'SPaMwmdmoawd54aslkfka98798gnan87w.jpg',
+      poster_path: 'Kjwaglk2k12gkjadqwer5448ak2n4DnFLk2.jpg',
+    },
+  ],
+};
+
+export default moviesMockData;
