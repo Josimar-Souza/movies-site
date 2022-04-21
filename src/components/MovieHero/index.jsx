@@ -33,7 +33,7 @@ function MovieHero({ Movie }) {
       <InfoBlock>
         <h1 data-testid="hero-movie-title">{Movie.title}</h1>
         <InfoSection>
-          <p>{`${formatDate(Movie.release_date)}`}</p>
+          <p data-testid="hero-movie-year">{`${formatDate(Movie.release_date)}`}</p>
           <MovieNote>{`Nota: ${Movie.vote_average}`}</MovieNote>
         </InfoSection>
         <Button
