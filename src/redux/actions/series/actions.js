@@ -10,7 +10,7 @@ const {
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 
-const seriesAPI = new SeriesAPI(baseURL);
+export const seriesAPI = new SeriesAPI(baseURL);
 
 const getAiringToday = () => (dispatch) => {
   seriesAPI.getAiringToday().then((payload) => dispatch({

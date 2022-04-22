@@ -30,10 +30,10 @@ function SeriesHero({ serie }) {
   return (
     <SeriesHeroStyle image={serie.backdrop_path}>
       <SeriesInfoBlock>
-        <h1>{serie.name}</h1>
+        <h1 data-testid="hero-serie-name">{serie.name}</h1>
         <SeriesInfoSection>
-          <p>{`${formatDate(serie.first_air_date)}`}</p>
-          <SerieNote>{`Nota: ${serie.vote_average}`}</SerieNote>
+          <p data-testid="hero-serie-year">{`${formatDate(serie.first_air_date)}`}</p>
+          <SerieNote data-testid="hero-serie-note">{`Nota: ${serie.vote_average}`}</SerieNote>
         </SeriesInfoSection>
         <Button
           onClick={onDetailsClick}
