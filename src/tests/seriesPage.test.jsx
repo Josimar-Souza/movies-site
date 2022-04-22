@@ -49,4 +49,16 @@ describe('Testes da página de séries', () => {
       expect(seriesButton).toBeDefined();
     });
   });
+
+  describe('Verifica a existência dos elementos da seção "Séries com episódios hoje"', () => {
+    it('Um titulo escrito "Séries com episódios hoje"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Séries com episódios hoje' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todos os cards das séries dessa seção', async () => {
+      const sectionSeries = await screen.findAllByTestId('item-Séries com episódios hoje');
+      expect(sectionSeries.length).toBe(seriesMockData.airingToday.length);
+    });
+  });
 });
