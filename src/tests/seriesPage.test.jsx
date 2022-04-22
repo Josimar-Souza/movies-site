@@ -10,6 +10,7 @@ describe('Testes da página de séries', () => {
   beforeEach(() => {
     jest.spyOn(seriesAPI, 'getAiringToday').mockResolvedValue(seriesMockData.airingToday);
     jest.spyOn(seriesAPI, 'getOnTheAir').mockResolvedValue(seriesMockData.onTheAir);
+    jest.spyOn(seriesAPI, 'getPopular').mockResolvedValue(seriesMockData.popular);
     renderWithRouterAndRedux(<SeriesPage />);
   });
 
@@ -72,6 +73,18 @@ describe('Testes da página de séries', () => {
     it('Todos os cards das séries dessa seção', async () => {
       const sectionSeries = await screen.findAllByTestId('item-Séries com episódios essa semana');
       expect(sectionSeries.length).toBe(seriesMockData.onTheAir.length);
+    });
+  });
+
+  describe('Verifica a existência dos elementos da seção "Séries populares"', () => {
+    it('Um título escrito "Séries populares"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Séries populares' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todos os cards das séries dessa seção', async () => {
+      const sectionSeries = await screen.findAllByTestId('item-Séries populares');
+      expect(sectionSeries.length).toBe(seriesMockData.popular.length);
     });
   });
 });
