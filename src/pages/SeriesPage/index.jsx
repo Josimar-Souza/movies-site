@@ -17,7 +17,7 @@ function SeriesPage() {
     dispatch(actions.getPopular());
     dispatch(actions.getTopRated());
   }, []);
-  console.log(series);
+
   const getSeriesPage = () => {
     if (series.popular.length > 0) {
       return (
