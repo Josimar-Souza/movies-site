@@ -113,6 +113,44 @@ const seriesMockData = {
       vote_average: 7.8,
     },
   ],
+  topRated: [
+    {
+      backdrop_path: '/Dmbvgh76EHgfrt9oOpnvZ.jpg',
+      poster_path: '/MNBVgfawerDlmgbhjWqrty.jpg',
+      first_air_date: '2001-07-12',
+      id: '324972',
+      name: 'Série 13',
+      overview: 'Overview de Série 13',
+      vote_average: 5.6,
+    },
+    {
+      backdrop_path: '/PjfghtIIuear1rt9oOpnvZ.jpg',
+      poster_path: '/Sfgkl196ghweRmgbhjWqrty.jpg',
+      first_air_date: '2004-04-04',
+      id: '364897',
+      name: 'Série 14',
+      overview: 'Overview de Série 14',
+      vote_average: 9.2,
+    },
+    {
+      backdrop_path: '/PjfghtIIueHlki976ypOfR.jpg',
+      poster_path: '/Sfgkl196ghwAfg57weMnopD.jpg',
+      first_air_date: '2007-06-27',
+      id: '938746',
+      name: 'Série 15',
+      overview: 'Overview de Série 15',
+      vote_average: 4.3,
+    },
+    {
+      backdrop_path: '/XmjghFewOplbki976ypOfR.jpg',
+      poster_path: '/Aljhmfr6uT8Wfg57weMnopD.jpg',
+      first_air_date: '2009-09-20',
+      id: '786324',
+      name: 'Série 16',
+      overview: 'Overview de Série 16',
+      vote_average: 5.8,
+    },
+  ],
 };
 
 export default seriesMockData;
