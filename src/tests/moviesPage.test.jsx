@@ -103,11 +103,25 @@ describe('Testes da página de filmes', () => {
   });
 
   describe('Verifica o comportamento da página', () => {
-    it('Ao clicar no botão "Séries", a página é redirecionada', async () => {
+    it('Ao clicar no botão "Séries", a página é redirecionada para a de series', async () => {
       const seriesButton = await screen.findByRole('button', { name: 'Séries' });
       userEvent.click(seriesButton);
       const { location: { pathname } } = window;
       expect(pathname).toBe('/series');
+    });
+
+    it('Ao clicar no botão "Ver detalhes", a página é redirecionada para a de detalhes do filme', async () => {
+      const detailsButton = await screen.findByRole('button', { name: 'Ver detalhes' });
+      userEvent.click(detailsButton);
+      const { location: { pathname } } = window;
+      expect(pathname).toMatch(/^\/movies\/details\/[0-9]+$/);
+    });
+
+    it('Ao clicar em um filme, a página é redirecionada para a de detalhes do filme', async () => {
+      const movie = await screen.findAllByTestId('item-Filmes no cinema');
+      userEvent.click(movie[0]);
+      const { location: { pathname } } = window;
+      expect(pathname).toMatch(/^\/movies\/details\/[0-9]+$/);
     });
   });
 });
