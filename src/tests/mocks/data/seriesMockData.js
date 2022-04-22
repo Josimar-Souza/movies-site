@@ -75,6 +75,44 @@ const seriesMockData = {
       vote_average: 8.6,
     },
   ],
+  popular: [
+    {
+      backdrop_path: '/5231JmnvgFwJhfmnVVcde7T.jpg',
+      poster_path: '/Cbnvhf987s4893JhfgdveW.jpg',
+      first_air_date: '2017-11-25',
+      id: '632791',
+      name: 'Série 9',
+      overview: 'Overview de Série 9',
+      vote_average: 6.6,
+    },
+    {
+      backdrop_path: '/MnfgtEQas9hfmnVVcde7T.jpg',
+      poster_path: '/ZnfgFdTi8UrY93JhfgdveW.jpg',
+      first_air_date: '2012-05-10',
+      id: '756184',
+      name: 'Série 10',
+      overview: 'Overview de Série 10',
+      vote_average: 5.9,
+    },
+    {
+      backdrop_path: '/MnfgtEQas9hFFgmbRtyo1.jpg',
+      poster_path: '/ZnfgFdTi8UrYSqegHjmhew.jpg',
+      first_air_date: '2011-06-26',
+      id: '746328',
+      name: 'Série 11',
+      overview: 'Overview de Série 11',
+      vote_average: 9.1,
+    },
+    {
+      backdrop_path: '/Dmbvgh76EwqlFgmbRtyo1.jpg',
+      poster_path: '/MNBVgfawer65SqegHjmhew.jpg',
+      first_air_date: '2013-07-06',
+      id: '234561',
+      name: 'Série 12',
+      overview: 'Overview de Série 12',
+      vote_average: 7.8,
+    },
+  ],
 };
 
 export default seriesMockData;
