@@ -37,4 +37,16 @@ describe('Testes da página de séries', () => {
       expect(detailsButton).toBeDefined();
     });
   });
+
+  describe('Verifica a existência dos elementos do header', () => {
+    it('Um botão escrito "Filmes"', async () => {
+      const moviesButton = await screen.findByRole('button', { name: 'Filmes' });
+      expect(moviesButton).toBeDefined();
+    });
+
+    it('Um botão escrito "Séries"', async () => {
+      const seriesButton = await screen.findByRole('button', { name: 'Séries' });
+      expect(seriesButton).toBeDefined();
+    });
+  });
 });
