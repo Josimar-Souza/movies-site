@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import renderWithRouterAndRedux from './renderWithRouterAndRedux';
 import MoviesPage from '../pages/MoviesPage';
 import moviesMockData from './mocks/data/moviesMockData';
@@ -98,6 +99,15 @@ describe('Testes da página de filmes', () => {
     it('Todos os cards dos filmes dessa seção', async () => {
       const sectionMovies = await screen.findAllByTestId('item-Filmes que sairão em breve');
       expect(sectionMovies.length).toBe(moviesMockData.upcoming.length);
+    });
+  });
+
+  describe('Verifica o comportamento da página', () => {
+    it('Ao clicar no botão "Séries", a página é redirecionada', async () => {
+      const seriesButton = await screen.findByRole('button', { name: 'Séries' });
+      userEvent.click(seriesButton);
+      const { location: { pathname } } = window;
+      expect(pathname).toBe('/series');
     });
   });
 });
