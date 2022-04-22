@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import renderWithRouterAndRedux from './renderWithRouterAndRedux';
 import seriesMockData from './mocks/data/seriesMockData';
 import SeriesPage from '../pages/SeriesPage';
@@ -98,6 +99,29 @@ describe('Testes da página de séries', () => {
     it('Todos os cards das séries dessa seção', async () => {
       const sectionSeries = await screen.findAllByTestId('item-Séries mais votadas');
       expect(sectionSeries.length).toBe(seriesMockData.topRated.length);
+    });
+  });
+
+  describe('Verifica o comportamento da página', () => {
+    it('Ao clicar no botão "Filmes", é redirecionado para a página de filmes', async () => {
+      const moviesButton = await screen.findByRole('button', { name: 'Filmes' });
+      userEvent.click(moviesButton);
+      const { location: { pathname } } = window;
+      expect(pathname).toBe('/movies');
+    });
+
+    it('Ao clicar no botão "Ver detalhes", é redirecionado para a página de detalhes da série', async () => {
+      const detailsButton = await screen.findByRole('button', { name: 'Ver detalhes' });
+      userEvent.click(detailsButton);
+      const { location: { pathname } } = window;
+      expect(pathname).toMatch(/^\/series\/details\/[0-9]+$/);
+    });
+
+    it('Ao clicar em uma série, é redirecionado para a página de detalhes da série', async () => {
+      const series = await screen.findAllByTestId('item-Séries com episódios hoje');
+      userEvent.click(series[0]);
+      const { location: { pathname } } = window;
+      expect(pathname).toMatch(/^\/series\/details\/[0-9]+$/);
     });
   });
 });
