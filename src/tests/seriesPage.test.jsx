@@ -51,7 +51,7 @@ describe('Testes da página de séries', () => {
   });
 
   describe('Verifica a existência dos elementos da seção "Séries com episódios hoje"', () => {
-    it('Um titulo escrito "Séries com episódios hoje"', async () => {
+    it('Um título escrito "Séries com episódios hoje"', async () => {
       const sectionTitle = await screen.findByRole('heading', { name: 'Séries com episódios hoje' });
       expect(sectionTitle).toBeDefined();
     });

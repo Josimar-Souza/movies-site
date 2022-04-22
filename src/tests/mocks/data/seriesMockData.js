@@ -37,6 +37,44 @@ const seriesMockData = {
       vote_average: 9.2,
     },
   ],
+  onTheAir: [
+    {
+      backdrop_path: '/asdLKjmfskmnvcREW5W2765.jpg',
+      poster_path: '/LmjLkmnvcSwqVZxvaWy76F.jpg',
+      first_air_date: '2019-07-07',
+      id: '956427',
+      name: 'Série 5',
+      overview: 'Overview de Série 5',
+      vote_average: 7.7,
+    },
+    {
+      backdrop_path: '/LKmjfhuy7F54vcREW5W2765.jpg',
+      poster_path: '/BdfvXSW43R8TVZxvaWy76F.jpg',
+      first_air_date: '2021-08-17',
+      id: '543679',
+      name: 'Série 6',
+      overview: 'Overview de Série 6',
+      vote_average: 7.4,
+    },
+    {
+      backdrop_path: '/LKmjfMnvfRtyYuih55W2765.jpg',
+      poster_path: '/BdfvXSW43R8TLkjfRqqQwe.jpg',
+      first_air_date: '2022-02-04',
+      id: '432897',
+      name: 'Série 7',
+      overview: 'Overview de Série 7',
+      vote_average: 4.6,
+    },
+    {
+      backdrop_path: '/5231JmnvgFweYuih55W2765.jpg',
+      poster_path: '/Cbnvhf987sgdLkjfRqqQwe.jpg',
+      first_air_date: '2022-01-23',
+      id: '856317',
+      name: 'Série 8',
+      overview: 'Overview de Série 8',
+      vote_average: 8.6,
+    },
+  ],
 };
 
 export default seriesMockData;
