@@ -112,8 +112,8 @@ function DetailsPage({ type }) {
               <Note data-testid="movie-details-note">{`Nota: ${movieDetails.vote_average}`}</Note>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{dateFormatter(movieDetails.release_date)}</p>
-              <p>{`Status: ${movieDetails.status}`}</p>
+              <p data-testid="movie-details-release-date">{dateFormatter(movieDetails.release_date)}</p>
+              <p data-testid="movie-details-status">{`Status: ${movieDetails.status}`}</p>
             </TecnicalInfo>
             <GenresContainer>
               {

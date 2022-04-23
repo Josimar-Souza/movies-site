@@ -52,5 +52,17 @@ describe('Testes da página de detalhes para filmes', () => {
       expect(movieNote).toBeDefined();
       expect(movieNote.innerHTML).toBe('Nota: 8.1');
     });
+
+    it('A data de lançamento do filme', async () => {
+      const movieReleaseDate = await screen.findByTestId('movie-details-release-date');
+      expect(movieReleaseDate).toBeDefined();
+      expect(movieReleaseDate.innerHTML).toBe('23/05/2019');
+    });
+
+    it('O status do filme', async () => {
+      const movieStatus = await screen.findByTestId('movie-details-status');
+      expect(movieStatus).toBeDefined();
+      expect(movieStatus.innerHTML).toBe(`Status: ${movieDetailsMock.status}`);
+    });
   });
 });
