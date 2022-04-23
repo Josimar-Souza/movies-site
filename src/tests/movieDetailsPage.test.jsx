@@ -40,5 +40,17 @@ describe('Testes da página de detalhes para filmes', () => {
       expect(movieRevenue).toBeDefined();
       expect(movieRevenue.innerHTML).toBe('Receita: $781,200,000.00');
     });
+
+    it('O tempo do filme', async () => {
+      const movieRuntime = await screen.findByTestId('movie-details-runtime');
+      expect(movieRuntime).toBeDefined();
+      expect(movieRuntime.innerHTML).toBe('167m');
+    });
+
+    it('A nota do filme', async () => {
+      const movieNote = await screen.findByTestId('movie-details-note');
+      expect(movieNote).toBeDefined();
+      expect(movieNote.innerHTML).toBe('Nota: 8.1');
+    });
   });
 });

@@ -108,8 +108,8 @@ function DetailsPage({ type }) {
               <p data-testid="movie-details-revenue">{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{`${movieDetails.runtime}m`}</p>
-              <Note>{`Nota: ${movieDetails.vote_average}`}</Note>
+              <p data-testid="movie-details-runtime">{`${movieDetails.runtime}m`}</p>
+              <Note data-testid="movie-details-note">{`Nota: ${movieDetails.vote_average}`}</Note>
             </TecnicalInfo>
             <TecnicalInfo>
               <p>{dateFormatter(movieDetails.release_date)}</p>
