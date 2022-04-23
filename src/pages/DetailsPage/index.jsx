@@ -20,7 +20,7 @@ function DetailsPage({ type }) {
   const [movieVideos, setMovieVideos] = useState([]);
   const [serieDetails, setSerieDetails] = useState({});
   const [serieVideos, setSerieVideos] = useState([]);
-  console.log(movieDetails);
+
   const {
     DetailsBackgorund,
     DetailsContainer,
