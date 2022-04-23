@@ -97,15 +97,15 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={movieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(movieDetails.poster_path)} alt={`Imagem de ${movieDetails.title}`} />
+            <DetailsImage data-testid="movie-details-image" src={getImageURL(movieDetails.poster_path)} alt={`Imagem de ${movieDetails.title}`} />
             <h3>Trailer</h3>
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
             <Title data-testid="movie-details-title">{movieDetails.title}</Title>
             <TecnicalInfo>
-              <p>{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
-              <p>{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
+              <p data-testid="movie-details-budget">{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
+              <p data-testid="movie-details-revenue">{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
               <p>{`${movieDetails.runtime}m`}</p>

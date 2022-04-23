@@ -6,6 +6,8 @@ import renderWithRouterAndRedux from './renderWithRouterAndRedux';
 import movieDetailsMock from './mocks/data/movieDetailsMock';
 import videosMockData from './mocks/data/videoMockData';
 
+const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
+
 describe('Testes da página de detalhes para filmes', () => {
   beforeEach(() => {
     const { movieVideoMock } = videosMockData;
@@ -19,6 +21,24 @@ describe('Testes da página de detalhes para filmes', () => {
       const movieTitle = await screen.findByTestId('movie-details-title');
       expect(movieTitle).toBeDefined();
       expect(movieTitle.innerHTML).toBe(movieDetailsMock.title);
+    });
+
+    it('A imagem do filme', async () => {
+      const movieImage = await screen.findByTestId('movie-details-image');
+      expect(movieImage).toBeDefined();
+      expect(movieImage).toHaveProperty('src', `${baseImageURL}${movieDetailsMock.poster_path}`);
+    });
+
+    it('O orçamento do filme', async () => {
+      const movieBudget = await screen.findByTestId('movie-details-budget');
+      expect(movieBudget).toBeDefined();
+      expect(movieBudget.innerHTML).toBe('Orçamento: $185,000,000.00');
+    });
+
+    it('A receita do filme', async () => {
+      const movieRevenue = await screen.findByTestId('movie-details-revenue');
+      expect(movieRevenue).toBeDefined();
+      expect(movieRevenue.innerHTML).toBe('Receita: $781,200,000.00');
     });
   });
 });
