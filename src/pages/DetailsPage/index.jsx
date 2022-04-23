@@ -11,7 +11,7 @@ import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 import Loading from '../../components/Loading';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const moviesAPI = new MoviesAPI(baseURL);
+export const moviesAPI = new MoviesAPI(baseURL);
 const seriesAPI = new SeriesAPI(baseURL);
 
 function DetailsPage({ type }) {
@@ -102,7 +102,7 @@ function DetailsPage({ type }) {
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
-            <Title>{movieDetails.title}</Title>
+            <Title data-testid="movie-details-title">{movieDetails.title}</Title>
             <TecnicalInfo>
               <p>{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
               <p>{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
