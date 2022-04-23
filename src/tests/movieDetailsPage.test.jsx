@@ -77,5 +77,20 @@ describe('Testes da página de detalhes para filmes', () => {
       expect(movieOverview).toBeDefined();
       expect(movieOverview.innerHTML).toBe(movieDetailsMock.overview);
     });
+
+    it('Um título escrito "Empresas de produção"', async () => {
+      const sectionTitle = await screen.findByRole('heading', { name: 'Empresas de produção' });
+      expect(sectionTitle).toBeDefined();
+    });
+
+    it('Todas as empresas de produção', async () => {
+      const companyImage = await screen.findAllByTestId('company-card-image');
+      const companyTitle = await screen.findAllByTestId('company-card-title');
+
+      movieDetailsMock.production_companies.forEach((company, index) => {
+        expect(companyImage[index]).toHaveProperty('src', `${baseImageURL}${company.logo_path}`);
+        expect(companyTitle[index].innerHTML).toBe(company.name);
+      });
+    });
   });
 });
