@@ -64,5 +64,18 @@ describe('Testes da página de detalhes para filmes', () => {
       expect(movieStatus).toBeDefined();
       expect(movieStatus.innerHTML).toBe(`Status: ${movieDetailsMock.status}`);
     });
+
+    it('Os gêneros do filme', async () => {
+      const movieGenres = await screen.findAllByTestId('movie-details-genre');
+      movieGenres.forEach((genre, index) => {
+        expect(genre.innerHTML).toBe(movieDetailsMock.genres[index].name);
+      });
+    });
+
+    it('Uma descrição do filme', async () => {
+      const movieOverview = await screen.findByTestId('movie-details-overview');
+      expect(movieOverview).toBeDefined();
+      expect(movieOverview.innerHTML).toBe(movieDetailsMock.overview);
+    });
   });
 });
