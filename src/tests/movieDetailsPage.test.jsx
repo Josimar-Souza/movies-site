@@ -9,8 +9,9 @@ import videosMockData from './mocks/data/videoMockData';
 const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
 
 describe('Testes da página de detalhes para filmes', () => {
+  const { movieVideoMock } = videosMockData;
+
   beforeEach(() => {
-    const { movieVideoMock } = videosMockData;
     jest.spyOn(moviesAPI, 'getDetails').mockResolvedValue(movieDetailsMock);
     jest.spyOn(moviesAPI, 'getVideos').mockResolvedValue(movieVideoMock);
     renderWithRouterAndRedux(<DetailsPage type="movies" />);
@@ -91,6 +92,17 @@ describe('Testes da página de detalhes para filmes', () => {
         expect(companyImage[index]).toHaveProperty('src', `${baseImageURL}${company.logo_path}`);
         expect(companyTitle[index].innerHTML).toBe(company.name);
       });
+    });
+
+    it('Um título escrito "Trailer"', async () => {
+      const trailerTitle = await screen.findByRole('heading', { name: 'Trailer' });
+      expect(trailerTitle).toBeDefined();
+    });
+
+    it('O trailer do filme', async () => {
+      const movieTrailer = await screen.findByTestId('movie-details-trailer');
+      expect(movieTrailer).toBeDefined();
+      expect(movieTrailer).toHaveProperty('src', `https://www.youtube.com/embed/${movieVideoMock[0].key}`);
     });
   });
 });
