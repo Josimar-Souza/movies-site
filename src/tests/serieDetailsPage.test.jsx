@@ -6,6 +6,8 @@ import renderWithRouterAndRedux from './renderWithRouterAndRedux';
 import serieDetailsMockData from './mocks/data/serieDetailsMock';
 import videosMockData from './mocks/data/videoMockData';
 
+const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
+
 describe('Testes da página de detalhes de séries', () => {
   beforeEach(() => {
     jest.spyOn(seriesAPI, 'getDetails').mockResolvedValue(serieDetailsMockData);
@@ -61,5 +63,23 @@ describe('Testes da página de detalhes de séries', () => {
     const serieOverview = await screen.findByTestId('serie-details-overview');
     expect(serieOverview).toBeDefined();
     expect(serieOverview.innerHTML).toBe(serieDetailsMockData.overview);
+  });
+
+  it('A imagem da série', async () => {
+    const serieImage = await screen.findByTestId('serie-details-image');
+    expect(serieImage).toHaveProperty('src', `${baseImageURL}${serieDetailsMockData.poster_path}`);
+  });
+
+  it('Todas as empresas de produção', async () => {
+    const serieCompaniesImages = await screen.findAllByTestId('company-card-image');
+    const serieCompaniesNames = await screen.findAllByTestId('company-card-title');
+
+    serieDetailsMockData.production_companies.forEach((company, index) => {
+      expect(serieCompaniesImages[index]).toBeDefined();
+      expect(serieCompaniesNames[index]).toBeDefined();
+
+      expect(serieCompaniesImages[index]).toHaveProperty('src', `${baseImageURL}${company.logo_path}`);
+      expect(serieCompaniesNames[index].innerHTML).toBe(company.name);
+    });
   });
 });

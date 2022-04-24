@@ -143,7 +143,7 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={serieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
+            <DetailsImage data-testid="serie-details-image" src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
             <h3>Trailer</h3>
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>

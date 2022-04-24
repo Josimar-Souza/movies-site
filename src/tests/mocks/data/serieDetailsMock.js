@@ -24,12 +24,12 @@ const serieDetailsMock = {
   production_companies: [
     {
       id: 321649,
-      logo_path: 'Lkfmbz987GfE.jpg',
+      logo_path: '/Lkfmbz987GfE.jpg',
       name: 'Empresa 1',
     },
     {
       id: 234618,
-      logo_path: 'MjhguBcvDeQ1.jpg',
+      logo_path: '/MjhguBcvDeQ1.jpg',
       name: 'Empresa 2',
     },
   ],
