@@ -82,4 +82,15 @@ describe('Testes da página de detalhes de séries', () => {
       expect(serieCompaniesNames[index].innerHTML).toBe(company.name);
     });
   });
+
+  it('Um título escrito "Trailer"', async () => {
+    const trailerTitle = await screen.findByRole('heading', { name: 'Trailer' });
+    expect(trailerTitle).toBeDefined();
+  });
+
+  it('O trailer da série', async () => {
+    const serieTrailer = await screen.findByTestId('serie-details-trailer');
+    expect(serieTrailer).toBeDefined();
+    expect(serieTrailer).toHaveProperty('src', `https://www.youtube.com/embed/${videosMockData[0].key}`);
+  });
 });

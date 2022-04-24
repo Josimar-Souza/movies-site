@@ -145,7 +145,7 @@ function DetailsPage({ type }) {
           <DetailsImageTrailerContainer>
             <DetailsImage data-testid="serie-details-image" src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
             <h3>Trailer</h3>
-            <Trailer trailerKey={getYoutubeTrailer()} />
+            <Trailer testId="serie-details-trailer" trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
             <Title data-testid="serie-details-name">{serieDetails.name}</Title>
