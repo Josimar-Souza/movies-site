@@ -1,4 +1,4 @@
-const movieVideoMock = [
+const videoMockData = [
   {
     id: '213568f46b8d2536f',
     key: 'Ulkdj26gjut',
@@ -8,8 +8,4 @@ const movieVideoMock = [
   },
 ];
 
-const videosMockData = {
-  movieVideoMock,
-};
-
-export default videosMockData;
+export default videoMockData;

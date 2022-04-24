@@ -12,7 +12,7 @@ import Loading from '../../components/Loading';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 export const moviesAPI = new MoviesAPI(baseURL);
-const seriesAPI = new SeriesAPI(baseURL);
+export const seriesAPI = new SeriesAPI(baseURL);
 
 function DetailsPage({ type }) {
   const { id } = useParams();
@@ -143,29 +143,29 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={serieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
+            <DetailsImage data-testid="serie-details-image" src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
             <h3>Trailer</h3>
-            <Trailer trailerKey={getYoutubeTrailer()} />
+            <Trailer testId="serie-details-trailer" trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
-            <Title>{serieDetails.name}</Title>
+            <Title data-testid="serie-details-name">{serieDetails.name}</Title>
             <TecnicalInfo>
-              <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
-              <p>{`Status: ${serieDetails.status}`}</p>
+              <p data-testid="serie-details-release-date">{`${dateFormatter(serieDetails.first_air_date)}`}</p>
+              <p data-testid="serie-details-status">{`Status: ${serieDetails.status}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
-              <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
-              <Note>{`Nota: ${serieDetails.vote_average}`}</Note>
+              <p data-testid="serie-details-seasons">{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
+              <p data-testid="serie-details-episodes">{`Episódios: ${serieDetails.number_of_episodes}`}</p>
+              <Note data-testid="serie-details-note">{`Nota: ${serieDetails.vote_average}`}</Note>
             </TecnicalInfo>
             <GenresContainer>
               {
                 serieDetails.genres.map(
-                  (genre) => <Genre key={genre.id}>{genre.name}</Genre>,
+                  (genre) => <Genre data-testid="serie-details-genre" key={genre.id}>{genre.name}</Genre>,
                 )
               }
             </GenresContainer>
-            <Overview>{serieDetails.overview}</Overview>
+            <Overview data-testid="serie-details-overview">{serieDetails.overview}</Overview>
             <ProductionCompaniesContainer>
               <h2>Empresas de produção</h2>
               {
