@@ -10,7 +10,7 @@ const {
   UPCOMING_ACTION_TYPE,
 } = actionsTypes;
 
-const moviesAPI = new MoviesAPI(baseURL);
+export const moviesAPI = new MoviesAPI(baseURL);
 
 const getNowPlaying = () => (dispatch) => {
   moviesAPI.getNowPlaying().then((payload) => dispatch({

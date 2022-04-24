@@ -31,10 +31,10 @@ function MovieHero({ Movie }) {
   return (
     <HeroStyle image={Movie.backdrop_path}>
       <InfoBlock>
-        <h1>{Movie.title}</h1>
+        <h1 data-testid="hero-movie-title">{Movie.title}</h1>
         <InfoSection>
-          <p>{`${formatDate(Movie.release_date)}`}</p>
-          <MovieNote>{`Nota: ${Movie.vote_average}`}</MovieNote>
+          <p data-testid="hero-movie-year">{`${formatDate(Movie.release_date)}`}</p>
+          <MovieNote data-testid="hero-movie-note">{`Nota: ${Movie.vote_average}`}</MovieNote>
         </InfoSection>
         <Button
           onClick={onDetailsClick}

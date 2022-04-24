@@ -11,8 +11,8 @@ import ProductionCompaniesCard from '../../components/ProductionCompaniesCard';
 import Loading from '../../components/Loading';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
-const moviesAPI = new MoviesAPI(baseURL);
-const seriesAPI = new SeriesAPI(baseURL);
+export const moviesAPI = new MoviesAPI(baseURL);
+export const seriesAPI = new SeriesAPI(baseURL);
 
 function DetailsPage({ type }) {
   const { id } = useParams();
@@ -97,32 +97,32 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={movieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(movieDetails.poster_path)} alt={`Imagem de ${movieDetails.title}`} />
+            <DetailsImage data-testid="movie-details-image" src={getImageURL(movieDetails.poster_path)} alt={`Imagem de ${movieDetails.title}`} />
             <h3>Trailer</h3>
-            <Trailer trailerKey={getYoutubeTrailer()} />
+            <Trailer testId="movie-details-trailer" trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
-            <Title>{movieDetails.title}</Title>
+            <Title data-testid="movie-details-title">{movieDetails.title}</Title>
             <TecnicalInfo>
-              <p>{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
-              <p>{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
+              <p data-testid="movie-details-budget">{`Orçamento: ${currencyFormatter(movieDetails.budget)}`}</p>
+              <p data-testid="movie-details-revenue">{`Receita: ${currencyFormatter(movieDetails.revenue)}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{`${movieDetails.runtime}m`}</p>
-              <Note>{`Nota: ${movieDetails.vote_average}`}</Note>
+              <p data-testid="movie-details-runtime">{`${movieDetails.runtime}m`}</p>
+              <Note data-testid="movie-details-note">{`Nota: ${movieDetails.vote_average}`}</Note>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{dateFormatter(movieDetails.release_date)}</p>
-              <p>{`Status: ${movieDetails.status}`}</p>
+              <p data-testid="movie-details-release-date">{dateFormatter(movieDetails.release_date)}</p>
+              <p data-testid="movie-details-status">{`Status: ${movieDetails.status}`}</p>
             </TecnicalInfo>
             <GenresContainer>
               {
                 movieDetails.genres.map(
-                  (genre) => <Genre key={genre.id}>{genre.name}</Genre>,
+                  (genre) => <Genre data-testid="movie-details-genre" key={genre.id}>{genre.name}</Genre>,
                 )
               }
             </GenresContainer>
-            <Overview>{movieDetails.overview}</Overview>
+            <Overview data-testid="movie-details-overview">{movieDetails.overview}</Overview>
             <ProductionCompaniesContainer>
               <h2>Empresas de produção</h2>
               {
@@ -143,29 +143,29 @@ function DetailsPage({ type }) {
         <DetailsBackgorund image={serieDetails.backdrop_path} />
         <DetailsContainer>
           <DetailsImageTrailerContainer>
-            <DetailsImage src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
+            <DetailsImage data-testid="serie-details-image" src={getImageURL(serieDetails.poster_path)} alt={`Imagem de ${serieDetails.name}`} />
             <h3>Trailer</h3>
-            <Trailer trailerKey={getYoutubeTrailer()} />
+            <Trailer testId="serie-details-trailer" trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
-            <Title>{serieDetails.name}</Title>
+            <Title data-testid="serie-details-name">{serieDetails.name}</Title>
             <TecnicalInfo>
-              <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
-              <p>{`Status: ${serieDetails.status}`}</p>
+              <p data-testid="serie-details-release-date">{`${dateFormatter(serieDetails.first_air_date)}`}</p>
+              <p data-testid="serie-details-status">{`Status: ${serieDetails.status}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
-              <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
-              <Note>{`Nota: ${serieDetails.vote_average}`}</Note>
+              <p data-testid="serie-details-seasons">{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
+              <p data-testid="serie-details-episodes">{`Episódios: ${serieDetails.number_of_episodes}`}</p>
+              <Note data-testid="serie-details-note">{`Nota: ${serieDetails.vote_average}`}</Note>
             </TecnicalInfo>
             <GenresContainer>
               {
                 serieDetails.genres.map(
-                  (genre) => <Genre key={genre.id}>{genre.name}</Genre>,
+                  (genre) => <Genre data-testid="serie-details-genre" key={genre.id}>{genre.name}</Genre>,
                 )
               }
             </GenresContainer>
-            <Overview>{serieDetails.overview}</Overview>
+            <Overview data-testid="serie-details-overview">{serieDetails.overview}</Overview>
             <ProductionCompaniesContainer>
               <h2>Empresas de produção</h2>
               {

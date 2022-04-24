@@ -16,7 +16,7 @@ function ItemsSection(props) {
       <h1>{title}</h1>
       <Items>
         {
-          items.map((item) => <ItemCard key={item.id} item={item} type={type} />)
+          items.map((item) => <ItemCard testId={`item-${title}`} key={item.id} item={item} type={type} />)
         }
       </Items>
     </ItemsSectionStyle>
