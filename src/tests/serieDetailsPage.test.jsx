@@ -70,6 +70,11 @@ describe('Testes da página de detalhes de séries', () => {
     expect(serieImage).toHaveProperty('src', `${baseImageURL}${serieDetailsMockData.poster_path}`);
   });
 
+  it('Um título escrito "Empresas de produção"', async () => {
+    const companiesSectionTitle = await screen.findByRole('heading', { name: 'Empresas de produção' });
+    expect(companiesSectionTitle).toBeDefined();
+  });
+
   it('Todas as empresas de produção', async () => {
     const serieCompaniesImages = await screen.findAllByTestId('company-card-image');
     const serieCompaniesNames = await screen.findAllByTestId('company-card-title');
