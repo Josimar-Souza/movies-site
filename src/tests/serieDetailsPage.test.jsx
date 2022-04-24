@@ -93,4 +93,12 @@ describe('Testes da página de detalhes de séries', () => {
     expect(serieTrailer).toBeDefined();
     expect(serieTrailer).toHaveProperty('src', `https://www.youtube.com/embed/${videosMockData[0].key}`);
   });
+
+  it('Esperado que não exista um header', () => {
+    const moviesButton = screen.queryByRole('button', { name: 'Filmes' });
+    const seriesButton = screen.queryByRole('button', { name: 'Séries' });
+
+    expect(moviesButton).toBe(null);
+    expect(seriesButton).toBe(null);
+  });
 });
