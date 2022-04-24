@@ -18,4 +18,16 @@ describe('Testes da página de detalhes de séries', () => {
     expect(serieName).toBeDefined();
     expect(serieName.innerHTML).toBe(serieDetailsMockData.name);
   });
+
+  it('A data de lançamento da série', async () => {
+    const serieReleaseDate = await screen.findByTestId('serie-details-release-date');
+    expect(serieReleaseDate).toBeDefined();
+    expect(serieReleaseDate.innerHTML).toBe('30/03/2016');
+  });
+
+  it('O status da série', async () => {
+    const serieStatus = await screen.findByTestId('serie-details-status');
+    expect(serieStatus).toBeDefined();
+    expect(serieStatus.innerHTML).toBe(`Status: ${serieDetailsMockData.status}`);
+  });
 });

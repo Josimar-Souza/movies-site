@@ -150,8 +150,8 @@ function DetailsPage({ type }) {
           <InfoContainer>
             <Title data-testid="serie-details-name">{serieDetails.name}</Title>
             <TecnicalInfo>
-              <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
-              <p>{`Status: ${serieDetails.status}`}</p>
+              <p data-testid="serie-details-release-date">{`${dateFormatter(serieDetails.first_air_date)}`}</p>
+              <p data-testid="serie-details-status">{`Status: ${serieDetails.status}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
               <p>{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
