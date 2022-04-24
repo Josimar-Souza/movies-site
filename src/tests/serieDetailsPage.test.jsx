@@ -30,4 +30,22 @@ describe('Testes da página de detalhes de séries', () => {
     expect(serieStatus).toBeDefined();
     expect(serieStatus.innerHTML).toBe(`Status: ${serieDetailsMockData.status}`);
   });
+
+  it('O número de temporadas', async () => {
+    const serieSeasons = await screen.findByTestId('serie-details-seasons');
+    expect(serieSeasons).toBeDefined();
+    expect(serieSeasons.innerHTML).toBe(`Temporadas: ${serieDetailsMockData.number_of_seasons}`);
+  });
+
+  it('O número de episódios', async () => {
+    const serieEpisodes = await screen.findByTestId('serie-details-episodes');
+    expect(serieEpisodes).toBeDefined();
+    expect(serieEpisodes.innerHTML).toBe(`Episódios: ${serieDetailsMockData.number_of_episodes}`);
+  });
+
+  it('A nota da série', async () => {
+    const serieNote = await screen.findByTestId('serie-details-note');
+    expect(serieNote).toBeDefined();
+    expect(serieNote.innerHTML).toBe(`Nota: ${serieDetailsMockData.vote_average}`);
+  });
 });

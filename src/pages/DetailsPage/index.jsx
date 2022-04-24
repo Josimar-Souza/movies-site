@@ -154,9 +154,9 @@ function DetailsPage({ type }) {
               <p data-testid="serie-details-status">{`Status: ${serieDetails.status}`}</p>
             </TecnicalInfo>
             <TecnicalInfo>
-              <p>{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
-              <p>{`Episódios: ${serieDetails.number_of_episodes}`}</p>
-              <Note>{`Nota: ${serieDetails.vote_average}`}</Note>
+              <p data-testid="serie-details-seasons">{`Temporadas: ${serieDetails.number_of_seasons}`}</p>
+              <p data-testid="serie-details-episodes">{`Episódios: ${serieDetails.number_of_episodes}`}</p>
+              <Note data-testid="serie-details-note">{`Nota: ${serieDetails.vote_average}`}</Note>
             </TecnicalInfo>
             <GenresContainer>
               {
