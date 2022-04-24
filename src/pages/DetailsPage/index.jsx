@@ -161,11 +161,11 @@ function DetailsPage({ type }) {
             <GenresContainer>
               {
                 serieDetails.genres.map(
-                  (genre) => <Genre key={genre.id}>{genre.name}</Genre>,
+                  (genre) => <Genre data-testid="serie-details-genre" key={genre.id}>{genre.name}</Genre>,
                 )
               }
             </GenresContainer>
-            <Overview>{serieDetails.overview}</Overview>
+            <Overview data-testid="serie-details-overview">{serieDetails.overview}</Overview>
             <ProductionCompaniesContainer>
               <h2>Empresas de produção</h2>
               {

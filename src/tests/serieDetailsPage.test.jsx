@@ -48,4 +48,18 @@ describe('Testes da página de detalhes de séries', () => {
     expect(serieNote).toBeDefined();
     expect(serieNote.innerHTML).toBe(`Nota: ${serieDetailsMockData.vote_average}`);
   });
+
+  it('Os gêneros da série', async () => {
+    const serieGenres = await screen.findAllByTestId('serie-details-genre');
+    serieGenres.forEach((genre, index) => {
+      expect(genre).toBeDefined();
+      expect(genre.innerHTML).toBe(serieDetailsMockData.genres[index].name);
+    });
+  });
+
+  it('A descrição da série', async () => {
+    const serieOverview = await screen.findByTestId('serie-details-overview');
+    expect(serieOverview).toBeDefined();
+    expect(serieOverview.innerHTML).toBe(serieDetailsMockData.overview);
+  });
 });
