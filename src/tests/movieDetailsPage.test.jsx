@@ -9,11 +9,9 @@ import videosMockData from './mocks/data/videoMockData';
 const baseImageURL = process.env.REACT_APP_IMAGE_BASE_URL;
 
 describe('Testes da página de detalhes para filmes', () => {
-  const { movieVideoMock } = videosMockData;
-
   beforeEach(() => {
     jest.spyOn(moviesAPI, 'getDetails').mockResolvedValue(movieDetailsMock);
-    jest.spyOn(moviesAPI, 'getVideos').mockResolvedValue(movieVideoMock);
+    jest.spyOn(moviesAPI, 'getVideos').mockResolvedValue(videosMockData);
     renderWithRouterAndRedux(<DetailsPage type="movies" />);
   });
 
@@ -102,7 +100,7 @@ describe('Testes da página de detalhes para filmes', () => {
     it('O trailer do filme', async () => {
       const movieTrailer = await screen.findByTestId('movie-details-trailer');
       expect(movieTrailer).toBeDefined();
-      expect(movieTrailer).toHaveProperty('src', `https://www.youtube.com/embed/${movieVideoMock[0].key}`);
+      expect(movieTrailer).toHaveProperty('src', `https://www.youtube.com/embed/${videosMockData[0].key}`);
     });
   });
 });

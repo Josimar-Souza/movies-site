@@ -12,7 +12,7 @@ import Loading from '../../components/Loading';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 export const moviesAPI = new MoviesAPI(baseURL);
-const seriesAPI = new SeriesAPI(baseURL);
+export const seriesAPI = new SeriesAPI(baseURL);
 
 function DetailsPage({ type }) {
   const { id } = useParams();
@@ -148,7 +148,7 @@ function DetailsPage({ type }) {
             <Trailer trailerKey={getYoutubeTrailer()} />
           </DetailsImageTrailerContainer>
           <InfoContainer>
-            <Title>{serieDetails.name}</Title>
+            <Title data-testid="serie-details-name">{serieDetails.name}</Title>
             <TecnicalInfo>
               <p>{`${dateFormatter(serieDetails.first_air_date)}`}</p>
               <p>{`Status: ${serieDetails.status}`}</p>
