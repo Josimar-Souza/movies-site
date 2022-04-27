@@ -36,7 +36,7 @@
   <li>Após isso você deverá ser capaz de rodar a aplicação utilizando o comando <code>npm start</code></li>
 </ol>
 <h2>Testes</h2>
-<p>Também é possível rodar os testes localmente, siga os passos da seção <a href="#local-running">"Rodando a aplicação locamente",</a> e você será capaz de rodar os testes com os seguintes comandos:</p>
+<p>Também é possível rodar os testes localmente, siga os passos da seção <a href="#local-running">"Rodando a aplicação locamente"</a>, e você será capaz de rodar os testes com os seguintes comandos:</p>
 <ul>
   <li>Para rodar todos os testes: <code>npm test</code></li>
   <li>Para rodar um arquivo de teste específico: <code>npm test {nome do arquivo}</code></li>
@@ -44,7 +44,7 @@
 <p>Todos os testes se encontram em: <code>src/tests</code></p>
 <h2>Próximos passos</h2>
 <ul>
-  <li>Adicionar suporte para mobile</li>
+  <li>Adicionar suporte do site para mobile</li>
 </ul>
 <h2>Contato</h2>
 <a href="https://www.linkedin.com/in/josimar-souza-brito/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
