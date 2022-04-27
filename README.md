@@ -18,7 +18,7 @@
 <p>O site foi publicado no Heroku, um serviço de deploy de aplicações em nuvem.</p>
 <p>Você também poderá visualizar o site já publicado acessando o link abaixo:</p>
 <a href="https://sharp-movies.herokuapp.com/movies" target="_blank">Sharp Movies</a>
-<h2>Rodando a aplicação localmente</h2>
+<h2 id="local-running">Rodando a aplicação localmente</h2>
 <p>Também é possível rodar o site localmente, mas para isso deverá primeiramente criar uma conta no the movie data base e solicitar uma chave para a api (api key) <a href="https://www.themoviedb.org/?language=pt-BR" target="_blank">TMDB</a>, se só deseja ver o site pronto recomendo acessar o site através do link: <a href="https://sharp-movies.herokuapp.com/movies" target="_blank">Sharp Movies</a></p>
 <p>Também deverá ter o Node.js instalado, para saber mais sobre, acesse o link: <a href="https://nodejs.org/en/" target="_blank">Node.js</a></p>
 <p>Para rodar localmente segue os passos abaixo:</p>
@@ -35,10 +35,16 @@
   </pre>
   <li>Após isso você deverá ser capaz de rodar a aplicação utilizando o comando <code>npm start</code></li>
 </ol>
+<h2>Testes</h2>
+<p>Também é possível rodar os testes localmente, siga os passos da seção <a href="#local-running">"Rodando a aplicação locamente"</a>, e você será capaz de rodar os testes com os seguintes comandos:</p>
+<ul>
+  <li>Para rodar todos os testes: <code>npm test</code></li>
+  <li>Para rodar um arquivo de teste específico: <code>npm test {nome do arquivo}</code></li>
+</ul>
+<p>Todos os testes se encontram em: <code>src/tests</code></p>
 <h2>Próximos passos</h2>
 <ul>
-  <li>Criar uma versão para mobile</li>
-  <li>Criar testes para a aplicação</li>
+  <li>Adicionar suporte do site para mobile</li>
 </ul>
 <h2>Contato</h2>
 <a href="https://www.linkedin.com/in/josimar-souza-brito/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
