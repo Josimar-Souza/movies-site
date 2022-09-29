@@ -1,7 +1,7 @@
 <h1>Bem vindo ao repositório movies site!</h1>
 <h2>Objetivo</h2>
 <p>Esse projeto teve como finalidade criar um site que exibisse informações de filmes e séries, e também, treinar o desenvolvimento de software front-end utilizando React.</p>
-<h2>Príncipais tecnologias utilizadas</h2>
+<h2>Princípais tecnologias utilizadas</h2>
 <p>Para desenvolver esse site utilizei principalmente:</p>
 <ul>
   <li>Axios</li>
