@@ -15,9 +15,9 @@
 <p>Também utilizei a api The Movie Data Base (TMDB), você poderá acessar a documentação da api através do link abaixo:</p>
 <a href="https://www.themoviedb.org/documentation/api?language=pt-BR" target="_blank">The Movie Data Base</a>
 <h2>Deploy</h2>
-<p>O site foi publicado no Heroku, um serviço de deploy de aplicações em nuvem.</p>
+<p>O site foi publicado no Render, um serviço para hospedar site e serviços</p>
 <p>Você também poderá visualizar o site já publicado acessando o link abaixo:</p>
-<a href="https://sharp-movies.herokuapp.com/movies" target="_blank">Sharp Movies</a>
+<a href="https://sharp-movies.onrender.com/movies" target="_blank">Sharp Movies</a>
 <h2 id="local-running">Rodando a aplicação localmente</h2>
 <p>Também é possível rodar o site localmente, mas para isso deverá primeiramente criar uma conta no the movie data base e solicitar uma chave para a api (api key) <a href="https://www.themoviedb.org/?language=pt-BR" target="_blank">TMDB</a>, se só deseja ver o site pronto recomendo acessar o site através do link: <a href="https://sharp-movies.herokuapp.com/movies" target="_blank">Sharp Movies</a></p>
 <p>Também deverá ter o Node.js instalado, para saber mais sobre, acesse o link: <a href="https://nodejs.org/en/" target="_blank">Node.js</a></p>
